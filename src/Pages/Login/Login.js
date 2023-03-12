@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AdminContext } from "../../Context/AdminContext";
 
 function Login(){
-    console.log("login");
+    const navigate = useNavigate();
     const [admin,setAdmin]= useContext(AdminContext);
     const [email,setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -13,7 +14,7 @@ function Login(){
             if(res.data.token){
                 localStorage.setItem("Token",res.data.token)
                 setAdmin(res.data.user);
-                console.log(res.data.user);
+                navigate('/admin');
             }
         })
     }

@@ -16,14 +16,21 @@ const ProtectedAdmin=({children})=>{
                 {
                     setAdmin(res.data);
                     setCheck(false);
+                    
                 }
                 else
                 {
                     navigate('/login');
                 }
             })
+            
         }
-    },[])
+        else
+        {
+            navigate('/login');
+        }
+
+    },[token])
     if(check)
        return (<div>Loading...</div>)
     return children;

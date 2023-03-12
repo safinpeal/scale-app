@@ -3,14 +3,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AdminContext } from '../../../Context/AdminContext';
 
 const AdminPage = () => {
-    const server = "http://localhost:5000/images/"
     const [admin,setAdmin]=useContext(AdminContext);
     //console.log(admin);
     const [name, setName]=useState();
     const [cat, setCat]=useState();
     const [files, setfiles]=useState();
     const [othersImg, setOthersImg]=useState([]);
-    const[imgs,setImgs]=useState([]);
+//    const[imgs,setImgs]=useState([]);
     const changeName=(e)=>{
         setName(e.target.value)
     }
@@ -38,16 +37,16 @@ const AdminPage = () => {
             data.append(`file-${i}`, othersImg[i])
         }
         axios.post('http://localhost:5000/upload',data).then(res=>{
-            console.log(res.data);
+            console.log('ok');
 
         })
     }
-    useEffect(()=>{ 
-        axios.get('http://localhost:5000/getproducts').then((res)=>{
-            console.log(res.data);
-            setImgs(res.data);
-        })
-    },[])
+    // useEffect(()=>{ 
+    //     axios.get('http://localhost:5000/getproducts').then((res)=>{
+    //         console.log(res.data);
+    //         setImgs(res.data);
+    //     })
+    // },[])
     return (
         <div>
             <h1>This is admin page</h1>
@@ -72,7 +71,7 @@ const AdminPage = () => {
                     <button type='submit' className='btn btn-primary m-4'>Upload</button>
                 </div>
             </form>
-            <div>            
+            {/* <div>            
                 {imgs.map(x=>
                 <div key={x._id}>
                     <img src={server+x.image}/>
@@ -84,7 +83,7 @@ const AdminPage = () => {
                     }
                 </div>
                  )}
-            </div>
+            </div> */}
 
         </div>
     );
