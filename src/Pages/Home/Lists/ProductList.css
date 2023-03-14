@@ -1,0 +1,14 @@
+.name {
+    font-family: 'Roboto', sans-serif;
+}
+
+.category {
+    font-family: 'Roboto', sans-serif;
+}
+
+.trans:hover {
+    transform: scale(1.05, 1.05);
+    transition: transform .8s ease-out;
+    border: 1px solid red;
+    box-shadow: -10px 10px 15px rgba(54, 151, 207, 0.5)
+}
