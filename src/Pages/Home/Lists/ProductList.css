@@ -7,8 +7,9 @@
 }
 
 .trans:hover {
-    transform: scale(1.05, 1.05);
-    transition: transform .8s ease-out;
-    border: 1px solid red;
+    transform: scale(1.02, 1.02);
+    transition: transform .4s ease-out;
+    /* border: 1px solid red; */
+    cursor: pointer;
     box-shadow: -10px 10px 15px rgba(54, 151, 207, 0.5)
 }

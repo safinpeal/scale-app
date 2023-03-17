@@ -45,6 +45,9 @@ const Navigation = () => {
         {admin?<li class="nav-item">
         <NavLink to="/admin" className="nav-link"><button onClick={logout} className='btn btn-secondary'>Logout</button></NavLink>
         </li>:''}
+        <li class="nav-item">
+        <NavLink to="/notification" className="nav-link"><button className='btn btn-secondary'>Notifications</button></NavLink>
+        </li>
         
       </ul>
       {/* <form className="d-flex">

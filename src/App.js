@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import ProtectedAdmin from './Auth/ProtectedAdmin';
 import axios from 'axios';
 import ProductDetails from './Pages/Home/ProductDetails/ProductDetails';
+import Notifications from './Pages/Admin/Notifications/Notifications';
 
 function App() {
   const token = localStorage.getItem('Token');
@@ -43,6 +44,10 @@ function App() {
             <Route path="/contact" element={<Contact></Contact>}/>
             <Route path="/productdetails/:id" element={<ProductDetails/>}/>
             <Route path="/admin" element={<ProtectedAdmin><AdminPage/></ProtectedAdmin>}/>
+            
+            <Route path="/notification" element={<Notifications/>}/>
+
+            
           </Routes>
         </BrowserRouter>
         </AdminContext.Provider>
