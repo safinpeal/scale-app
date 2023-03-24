@@ -1,15 +1,21 @@
 import axios from 'axios';
 import React from 'react';
+import { useContext } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { NotificationContext } from '../../../Context/NotificationContext';
+
 
 const Notifications = () => {
     let count=0;
     const [tableData,setTableData]=useState([]);
+    const{notification,setNotification}=useContext(NotificationContext);
     useEffect(()=>{
         axios.get('http://localhost:5000/notification')
         .then(response => {
           setTableData(response.data);
+          setNotification(response.data);
+          
         })
         .catch(error => {
           console.error(error);

@@ -7,6 +7,7 @@ import Navigation from './Pages/Shared/Navigation/Navigation';
 import Contact from './Pages/Contact/Contact';
 import AdminPage from './Pages/Admin/AdminPage/AdminPage';
 import Login from './Pages/Login/Login';
+import {NotificationContext} from './Context/NotificationContext'
 import { AdminContext } from './Context/AdminContext';
 import { useEffect, useState } from 'react';
 import ProtectedAdmin from './Auth/ProtectedAdmin';
@@ -18,6 +19,18 @@ function App() {
   const token = localStorage.getItem('Token');
   const [admin,setAdmin] = useState();
   const [check,setCheck]=useState(true);
+  const [notification,setNotification]=useState([]);
+  useEffect(()=>{
+    axios.get('http://localhost:5000/notification')
+    .then(response => {
+      
+      setNotification(response.data);
+      
+    })
+    .catch(error => {
+      console.error(error);
+    });
+},[])
   useEffect(()=>{
       if(token){
         axios.post('http://localhost:5000/check-authentication',token)
@@ -35,6 +48,7 @@ function App() {
     return (
       <div className="App">
         <AdminContext.Provider value={[admin,setAdmin]}>
+          <NotificationContext.Provider value={{notification,setNotification}}>
           <BrowserRouter>
           <Navigation></Navigation>
           <Routes>
@@ -50,6 +64,7 @@ function App() {
             
           </Routes>
         </BrowserRouter>
+        </NotificationContext.Provider>
         </AdminContext.Provider>
       </div>
     );

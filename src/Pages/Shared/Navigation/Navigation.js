@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { AdminContext } from '../../../Context/AdminContext';
+import { NotificationContext } from '../../../Context/NotificationContext';
+
 
 const Navigation = () => {
   const navigate = useNavigate();
   const [admin,setAdmin]= useContext(AdminContext);
+  const {notification,setNotification}=useContext(NotificationContext);
   const logout=()=>{
     
     localStorage.removeItem('Token');
@@ -12,6 +15,7 @@ const Navigation = () => {
     //navigate('/');
     
   }
+  console.log(notification.length);
     return (
            
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -46,7 +50,7 @@ const Navigation = () => {
         <NavLink to="/admin" className="nav-link"><button onClick={logout} className='btn btn-secondary'>Logout</button></NavLink>
         </li>:''}
         <li class="nav-item">
-        <NavLink to="/notification" className="nav-link"><button className='btn btn-secondary'>Notifications</button></NavLink>
+        <NavLink to="/notification" className="nav-link"><button className='btn btn-secondary'>Notifications({notification.length})</button></NavLink>
         </li>
         
       </ul>
