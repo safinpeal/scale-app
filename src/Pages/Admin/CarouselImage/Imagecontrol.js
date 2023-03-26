@@ -23,14 +23,15 @@ const ImageController=()=>{
         formdata.append('file',file);
         axios.post('http://localhost:5000/add-image',formdata)
         .then(res=>{
-            console.log(res.data);
+            images.push(res.data);
+            setFile('');
+            document.getElementById('file').value='';
+            //console.log(res.data);
         })
     }
-    
-    const previewImage=()=>{};
 
     const deleteImage=(image)=>{
-      axios.post('http://localhost:5000/delete',{id:image._id})
+      axios.post('http://localhost:5000/delete',{id:image._id,name:image.imageUrl})
       .then(res=>{
         console.log(res.data);
         const arr = images.filter((img)=>{
@@ -43,7 +44,7 @@ const ImageController=()=>{
         axios.get('http://localhost:5000/carousel-image')
         .then((res)=>{
             setImages(res.data);
-            console.log(res.data);
+            //console.log(res.data);
         })
     },[])
 
@@ -53,7 +54,7 @@ const ImageController=()=>{
             <form className="mb-5">
                 <div className="m-3">
                     <label htmlFor='file'>Upload a Image</label>
-                    <input onChange={changeFile} type='file' id='file' name='file'/>
+                    <input onChange={changeFile} type='file' id='file' name='file' required/>
                 </div>
                 <div><button className="btn btn-primary" onClick={UploadImage}>Upload</button></div>
             </form>
@@ -72,7 +73,7 @@ const ImageController=()=>{
             <Modal size="lg" show={modal} onHide={hideModal} backdrop="static">
                 <Modal.Header closeButton></Modal.Header>
                 <Modal.Body>
-                    <img src={server+modalImage} width="100%" height="100%"/>
+                    <img src={server+modalImage} width="100%" height="100%" alt={modalImage}/>
                 </Modal.Body>
                 <Modal.Footer></Modal.Footer>
             </Modal>
