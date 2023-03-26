@@ -14,6 +14,8 @@ import ProtectedAdmin from './Auth/ProtectedAdmin';
 import axios from 'axios';
 import ProductDetails from './Pages/Home/ProductDetails/ProductDetails';
 import Notifications from './Pages/Admin/Notifications/Notifications';
+import Employee from './Pages/Admin/AddEmployee/Employee';
+import ImageController from './Pages/Admin/CarouselImage/Imagecontrol';
 
 function App() {
   const token = localStorage.getItem('Token');
@@ -58,7 +60,8 @@ function App() {
             <Route path="/contact" element={<Contact></Contact>}/>
             <Route path="/productdetails/:id" element={<ProductDetails/>}/>
             <Route path="/admin" element={<ProtectedAdmin><AdminPage/></ProtectedAdmin>}/>
-            
+            <Route path="/addemployee" element={<Employee/>}/>
+            <Route path="/change-image" element={<ImageController/>}/>
             <Route path="/notification" element={<Notifications/>}/>
 
             

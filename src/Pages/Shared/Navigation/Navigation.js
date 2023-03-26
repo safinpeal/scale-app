@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AdminContext } from '../../../Context/AdminContext';
 import { NotificationContext } from '../../../Context/NotificationContext';
-
+import Dropdown from 'react-bootstrap/Dropdown';
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -42,10 +42,20 @@ const Navigation = () => {
         <li class="nav-item">
           <NavLink to="/language" className="nav-link">Language</NavLink>
         </li>
-        {admin?
-        <li class="nav-item">
-        <NavLink to="/admin" className="nav-link">Admin</NavLink>
-        </li> :''}
+    {admin? 
+      <Dropdown>
+      <Dropdown.Toggle id="dropdown-basic">
+        Admin Section
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <div><Link to='/admin'>Upload Products</Link></div>
+        <div><Link to='/addemployee'>Add Employee</Link></div>
+        <div><Link to='/change-image'>Change Picture</Link></div>
+      </Dropdown.Menu>
+    </Dropdown>
+    :''}
+
         {admin?<li class="nav-item">
         <NavLink to="/admin" className="nav-link"><button onClick={logout} className='btn btn-secondary'>Logout</button></NavLink>
         </li>:''}
