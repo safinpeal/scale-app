@@ -16,6 +16,7 @@ import ProductDetails from './Pages/Home/ProductDetails/ProductDetails';
 import Notifications from './Pages/Admin/Notifications/Notifications';
 import Employee from './Pages/Admin/AddEmployee/Employee';
 import ImageController from './Pages/Admin/CarouselImage/Imagecontrol';
+import AllProducts from './Pages/AllProducts/AllProducts';
 
 function App() {
   const token = localStorage.getItem('Token');
@@ -35,9 +36,10 @@ function App() {
 },[])
   useEffect(()=>{
       if(token){
-        axios.post('http://localhost:5000/check-authentication',token)
+        axios.post('http://localhost:5000/check-authentication',{token})
         .then((res)=>{
-          setAdmin(res.data)
+          setAdmin(res.data.id)
+          //console.log(res.data);
         })
       }
       setCheck(false);
@@ -55,6 +57,7 @@ function App() {
           <Navigation></Navigation>
           <Routes>
             <Route path="/" element={<Home></Home>}/>
+            <Route path="/productslist" element={<AllProducts></AllProducts>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/about" element={<AboutUs></AboutUs>}/>
             <Route path="/contact" element={<Contact></Contact>}/>

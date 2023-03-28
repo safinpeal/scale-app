@@ -30,6 +30,9 @@ const Navigation = () => {
           <NavLink exact to="/" className="nav-link active">Home</NavLink>
         </li>
         <li class="nav-item">
+          <NavLink to="/productslist" className="nav-link active">Products List</NavLink>
+        </li>
+        <li class="nav-item">
           <NavLink to="/about" className="nav-link">About Us</NavLink>
         </li>
         {!admin?
