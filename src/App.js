@@ -14,6 +14,11 @@ import ProtectedAdmin from './Auth/ProtectedAdmin';
 import axios from 'axios';
 import ProductDetails from './Pages/Home/ProductDetails/ProductDetails';
 import Notifications from './Pages/Admin/Notifications/Notifications';
+import Employee from './Pages/Admin/AddEmployee/Employee';
+import ImageController from './Pages/Admin/CarouselImage/Imagecontrol';
+import AllProducts from './Pages/AllProducts/AllProducts';
+import Footer from './Pages/Shared/Footer/Footer';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 function App() {
   const token = localStorage.getItem('Token');
@@ -71,8 +76,6 @@ function App() {
         </BrowserRouter>
         </NotificationContext.Provider>
         </AdminContext.Provider>
-        
-        
       </div>
     );
   }
