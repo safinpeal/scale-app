@@ -31,7 +31,7 @@ const AllProducts=()=>{
         <div className="container mt-3">
             <h2>All Products List</h2>
             <select id="select" className="" onChange={changeProducts}>
-                <option value="1" selected>Select Category</option>
+                <option value="1">Select Category</option>
                 <option value="china">Made In China</option>
                 <option value="spain">Made In Spain</option>
             </select>

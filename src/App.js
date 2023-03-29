@@ -63,6 +63,7 @@ function App() {
             <Route path="/contact" element={<Contact></Contact>}/>
             <Route path="/productdetails/:id" element={<ProductDetails/>}/>
             <Route path="/admin" element={<ProtectedAdmin><AdminPage/></ProtectedAdmin>}/>
+            <Route path="/admin/:id" element={<ProtectedAdmin><AdminPage/></ProtectedAdmin>}/>
             <Route path="/addemployee" element={<Employee/>}/>
             <Route path="/change-image" element={<ImageController/>}/>
             <Route path="/notification" element={<Notifications/>}/>
