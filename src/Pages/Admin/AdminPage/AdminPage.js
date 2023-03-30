@@ -1,11 +1,11 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { AdminContext } from '../../../Context/AdminContext';
+//import { AdminContext } from '../../../Context/AdminContext';
 
 const AdminPage = () => {
     const navigate =useNavigate(); 
-    const [admin,setAdmin]=useContext(AdminContext);
+//    const [admin,setAdmin]=useContext(AdminContext);
     const {id} = useParams();
     const [disable,setDisable]=useState(false);
     const [name,setName]=useState();
@@ -16,6 +16,8 @@ const AdminPage = () => {
     const [pdf, setPdf]=useState();
     const [othersImg, setOthersImg]=useState([]);
     const [check,setCheck] = useState(false)
+    const token = localStorage.getItem('Token');
+    const [msg,setMsg]= useState('');
     const changeName=(e)=>{
        setName(e.target.value)
     }
@@ -36,47 +38,79 @@ const AdminPage = () => {
     const uploadData=(e)=>{
         e.preventDefault();
         setDisable(true);
-        const data = new FormData();
-        data.append('name',name);
-        data.append('cat',cat);
-        data.append('madeIn',madeIn);
-        data.append('top',top);
-        data.append('file',files);
-        data.append('pdf',pdf);
-        data.append('size',othersImg.length);
-        for(let i =0; i<othersImg.length;i++)
+        if(token){
+            const data = new FormData();
+            data.append('token',token);
+            data.append('name',name);
+            data.append('cat',cat);
+            data.append('madeIn',madeIn);
+            data.append('top',top);
+            data.append('file',files);
+            data.append('pdf',pdf);
+            data.append('size',othersImg.length);
+            for(let i =0; i<othersImg.length;i++)
+    
+            {
+                data.append(`file-${i}`, othersImg[i])
+            }
+            axios.post('http://localhost:5000/upload',data).then(res=>{
+                //console.log(res.data);
+                setDisable(false);
+                if(res.data.status===200){
+                    
+                    document.getElementById('name').value='';
+                    document.getElementById('cat').value='';
+                    setMadeIn('china');
+                    setTop(true);
+                    setMsg('');
+                    document.getElementById('file').value=null;
+                    document.getElementById('pdf').value=null;
+                    document.getElementById('files').value=null;
+                }
+                else
+                {
+                    setMsg(res.data.msg);
+                    //console.log(res.data);
+                }
 
-        {
-            data.append(`file-${i}`, othersImg[i])
+            })
         }
-        axios.post('http://localhost:5000/upload',data).then(res=>{
-            //console.log(res.data);
-            setDisable(false);
-            document.getElementById('name').value='';
-            document.getElementById('cat').value='';
-            setMadeIn('china');
-            setTop(true);
-            document.getElementById('file').value=null;
-            document.getElementById('pdf').value=null;
-            document.getElementById('files').value=null;
-
-
-        })
+        else{
+            alert('Access Denied');
+        }
     }
 
     const updateData=(e)=>{
         e.preventDefault();
         setDisable(true);
-        const data = new FormData();
-        data.append('id',id);
-        data.append('name',name);
-        data.append('cat',cat);
-        data.append('madeIn',madeIn);
-        data.append('top',top);
-        axios.post('http://localhost:5000/updateproduct',data)
-        .then(res=>{
-            navigate('/productslist');
-        });
+        if(token){
+            const data = new FormData();
+            data.append('token',token);
+            data.append('id',id);
+            data.append('name',name);
+            data.append('cat',cat);
+            data.append('madeIn',madeIn);
+            data.append('top',top);
+            axios.post('http://localhost:5000/updateproduct',data)
+            .then(res=>{
+                setDisable(false);
+                if(res.data.status===200)
+                {
+                    
+                    navigate('/productslist');
+                }
+                else
+                {
+                    setMsg(res.data.msg);
+                }
+
+            });
+        }
+        else
+        {
+            alert('Access Denied');
+        }
+
     }
     useEffect(()=>{ 
             if(id)
@@ -139,20 +173,8 @@ const AdminPage = () => {
                     <button onClick={updateData} disabled={disable} className='btn btn-primary m-4'>Update</button>
                     }
                 </div>
+                <div>{msg}</div>
             </form>
-            {/* <div>            
-                {imgs.map(x=>
-                <div key={x._id}>
-                    <img src={server+x.image}/>
-                    {
-                      x.othernames.split(',').map((name)=>
-                      <div key={name}>
-                        <img src={server+name}/>
-                      </div>)
-                    }
-                </div>
-                 )}
-            </div> */}
 
         </div>
     );
