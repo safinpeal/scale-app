@@ -7,37 +7,63 @@ const Employee=()=>{
     const [desig,setDesig]=useState();
     const [file,setFile]=useState();
     const [list,setList]=useState([]);
-
+    const token = localStorage.getItem('Token');
+    const [msg, setMsg]=useState('');
     const addEmployee=(e)=>{
         e.preventDefault();
+        if(token)
+        {
         const formdata = new FormData();
+        formdata.append('token',token);
         formdata.append('name',name);
         formdata.append('phone',phone);
         formdata.append('designation',desig);
         formdata.append('file',file);
         axios.post('http://localhost:5000/add-employee',formdata)
         .then(res=>{
-            list.push(res.data);
-            setName('');
-            setPhone('');
-            setDesig('');
-            setFile('');
-            document.getElementById('name').value='';
-            document.getElementById('phn').value='';
-            document.getElementById('deg').value='';
-            document.getElementById('file').value='';
+            if(res.data.status==200)
+            {
+                list.push(res.data.response);
+                setName('');
+                setPhone('');
+                setDesig('');
+                setFile('');
+                document.getElementById('name').value='';
+                document.getElementById('phn').value='';
+                document.getElementById('deg').value='';
+                document.getElementById('file').value='';
+            }
             //console.log(res.data)
         })
+        }
+        else
+        {
+           alert('Access Denied');
+        }
     }
 
     const deleteEmp=(emp)=>{
-        axios.post('http://localhost:5000/delete-employee',{id:emp._id,image:emp.image})
-        .then(res=>{
-            const arr = list.filter((employee)=>{
-                return employee._id!== emp._id;
+        if(token){
+            axios.post('http://localhost:5000/delete-employee',{id:emp._id,image:emp.image,token})
+            .then(res=>{
+                //console.log(res.data);
+                if(res.data.status==0)
+                {
+                    setMsg(res.data.msg);     
+                }
+                else{
+                    const arr = list.filter((employee)=>{
+                        return employee._id!== emp._id;
+                    })
+                    setList(arr);
+                }
+
             })
-            setList(arr);
-        })
+        }
+        else
+        {
+           alert('Access Denied');
+        }
     };
     useEffect(()=>{
         axios.get('http://localhost:5000/get-employee')
@@ -80,6 +106,7 @@ const Employee=()=>{
                   <div key={emp._id} className="my-2">
                     {emp.name}  {emp.phone} 
                     <button onClick={()=>{deleteEmp(emp)}} className="btn btn-danger">Delete</button>
+                    <div>{msg}</div>
                   </div>  
                 )
             }
