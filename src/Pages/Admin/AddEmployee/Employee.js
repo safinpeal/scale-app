@@ -32,6 +32,11 @@ const Employee=()=>{
                 document.getElementById('phn').value='';
                 document.getElementById('deg').value='';
                 document.getElementById('file').value='';
+                setMsg('');
+            }
+            else
+            {
+                setMsg(res.data.msg);
             }
             //console.log(res.data)
         })
@@ -98,6 +103,7 @@ const Employee=()=>{
                 </div>
                 </div>
                 <button onClick={addEmployee} className="btn btn-primary" type="submit">Upload</button>
+                <div>{msg}</div>
             </form>
             </div>
             <div className="my-4">Employee List</div>

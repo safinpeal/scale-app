@@ -66,8 +66,8 @@ function App() {
             <Route path="/productdetails/:id" element={<ProductDetails/>}/>
             <Route path="/admin" element={<ProtectedAdmin><AdminPage/></ProtectedAdmin>}/>
             <Route path="/admin/:id" element={<ProtectedAdmin><AdminPage/></ProtectedAdmin>}/>
-            <Route path="/addemployee" element={<Employee/>}/>
-            <Route path="/change-image" element={<ImageController/>}/>
+            <Route path="/addemployee" element={<ProtectedAdmin><Employee/></ProtectedAdmin>}/>
+            <Route path="/change-image" element={<ProtectedAdmin><ImageController/></ProtectedAdmin>}/>
             <Route path="/notification" element={<Notifications/>}/>
 
             

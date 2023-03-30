@@ -8,6 +8,8 @@ const ImageController=()=>{
     const [modal, setModal] = useState(false);
     const [modalImage, setModalImage]= useState('');
     const server = "http://localhost:5000/CarouselImage/";
+    const token = localStorage.getItem('Token');
+    const [msg,setMsg]= useState('');
     const showModal =(image)=>{ 
         setModalImage(image);
         setModal(true);
@@ -19,26 +21,56 @@ const ImageController=()=>{
     }
     const UploadImage=(e)=>{
         e.preventDefault();
-        const formdata = new FormData();
-        formdata.append('file',file);
-        axios.post('http://localhost:5000/add-image',formdata)
-        .then(res=>{
-            images.push(res.data);
-            setFile('');
-            document.getElementById('file').value='';
-            //console.log(res.data);
-        })
+        if(token){
+            const formdata = new FormData();
+            formdata.append('file',file);
+            formdata.append('token',token);
+            axios.post('http://localhost:5000/add-image',formdata)
+            .then(res=>{
+                if(res.data.status==200)
+                {
+                    images.push(res.data.response);
+                    setFile('');
+                    setMsg('');
+                    document.getElementById('file').value='';
+                }
+                else
+                {
+                    setMsg(res.data.msg);
+                }
+
+                //console.log(res.data);
+            })
+        }
+        else
+        {
+            alert('Access Denied');
+        }
     }
 
     const deleteImage=(image)=>{
-      axios.post('http://localhost:5000/delete',{id:image._id,name:image.imageUrl})
-      .then(res=>{
-        console.log(res.data);
-        const arr = images.filter((img)=>{
-            return img._id!== image._id;
-        })
-        setImages(arr);
-      })
+        if(token){
+            axios.post('http://localhost:5000/delete',{id:image._id,name:image.imageUrl,token})
+            .then(res=>{
+                if(res.data.status==200)
+                {
+                    const arr = images.filter((img)=>{
+                        return img._id!== image._id;
+                    })
+                    setImages(arr);
+                    setMsg('');
+                }
+                else
+                {
+                    setMsg(res.data.msg);
+                }
+
+            })
+        }
+        else
+        {
+            alert("Access Denied");
+        }
     };
     useEffect(()=>{
         axios.get('http://localhost:5000/carousel-image')
@@ -57,6 +89,7 @@ const ImageController=()=>{
                     <input onChange={changeFile} type='file' id='file' name='file' required/>
                 </div>
                 <div><button className="btn btn-primary" onClick={UploadImage}>Upload</button></div>
+                <div>{msg}</div>
             </form>
 
             <div>Image List</div>
@@ -66,6 +99,7 @@ const ImageController=()=>{
                     {image.imageUrl}
                     <button className="btn btn-primary mx-2" onClick={()=>{showModal(image.imageUrl)}}>Preview</button>
                     <button className="btn btn-danger mx-2" onClick={()=>{deleteImage(image)}}>Delete</button>
+                    <div>{msg}</div>
                 </div>
                 )
             }
