@@ -14,9 +14,11 @@ import ProtectedAdmin from './Auth/ProtectedAdmin';
 import axios from 'axios';
 import ProductDetails from './Pages/Home/ProductDetails/ProductDetails';
 import Notifications from './Pages/Admin/Notifications/Notifications';
+import Employee from './Pages/Admin/AddEmployee/Employee';
+import ImageController from './Pages/Admin/CarouselImage/Imagecontrol';
+import AllProducts from './Pages/AllProducts/AllProducts';
 import Footer from './Pages/Shared/Footer/Footer';
 import '@fortawesome/fontawesome-free/css/all.css';
-
 
 function App() {
   const token = localStorage.getItem('Token');
@@ -36,9 +38,10 @@ function App() {
 },[])
   useEffect(()=>{
       if(token){
-        axios.post('http://localhost:5000/check-authentication',token)
+        axios.post('http://localhost:5000/check-authentication',{token})
         .then((res)=>{
-          setAdmin(res.data)
+          setAdmin(res.data.id)
+          //console.log(res.data);
         })
       }
       setCheck(false);
@@ -56,12 +59,15 @@ function App() {
           <Navigation></Navigation>
           <Routes>
             <Route path="/" element={<Home></Home>}/>
+            <Route path="/productslist" element={<AllProducts></AllProducts>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/about" element={<AboutUs></AboutUs>}/>
             <Route path="/contact" element={<Contact></Contact>}/>
             <Route path="/productdetails/:id" element={<ProductDetails/>}/>
             <Route path="/admin" element={<ProtectedAdmin><AdminPage/></ProtectedAdmin>}/>
-            
+            <Route path="/admin/:id" element={<ProtectedAdmin><AdminPage/></ProtectedAdmin>}/>
+            <Route path="/addemployee" element={<Employee/>}/>
+            <Route path="/change-image" element={<ImageController/>}/>
             <Route path="/notification" element={<Notifications/>}/>
 
             
@@ -70,8 +76,6 @@ function App() {
         </BrowserRouter>
         </NotificationContext.Provider>
         </AdminContext.Provider>
-        
-        
       </div>
     );
   }
