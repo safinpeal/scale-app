@@ -53,7 +53,7 @@ const Footer = () => {
    </span>
    <span class="fa-stack fa-lg facebook">
     
-      <FontAwesomeIcon icon={faFacebookF} />
+    <Link to="https://www.facebook.com/groups/1625746967875634/?hoisted_section_header_type=recently_seen&multi_permalinks=1626495904467407"> <FontAwesomeIcon icon={faFacebookF} /></Link>
 
    </span>
    <span class="fa-stack fa-lg whatsapp ">

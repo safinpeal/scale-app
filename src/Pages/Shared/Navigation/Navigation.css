@@ -1,0 +1,16 @@
+.dropdown {
+    padding: 10px;
+
+}
+
+.dropdown-link {
+    color: rgb(57, 65, 57);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.1s ease;
+
+}
+
+.dropdown-link:hover {
+    color: blueviolet;
+}

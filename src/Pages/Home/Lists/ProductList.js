@@ -8,7 +8,9 @@ function ProductList(props){
     return(
         
           <div className="card h-100 trans">
-            <img src={server+props.product.image} className="card-img-top img-fluid" alt="..."/>
+            <div className="image">
+            <img src={server+props.product.image} className="card-img-top img-fluid card-img" alt="..."/>
+            </div>
             <div class="card-body">
               <h5 className="card-title name">{props.product.name}</h5>
               <p class="card-text">{props.product.category}</p>

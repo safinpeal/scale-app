@@ -13,3 +13,12 @@
     cursor: pointer;
     box-shadow: -10px 10px 15px rgba(54, 151, 207, 0.5)
 }
+
+.card-img {
+    width: 100%;
+    max-height: 350px;
+}
+
+.image {
+    height: 400px;
+}

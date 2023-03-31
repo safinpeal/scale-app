@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AdminContext } from '../../../Context/AdminContext';
 import { NotificationContext } from '../../../Context/NotificationContext';
 import Dropdown from 'react-bootstrap/Dropdown';
+import './Navigation.css';
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -51,10 +52,10 @@ const Navigation = () => {
         Admin Section
       </Dropdown.Toggle>
 
-      <Dropdown.Menu>
-        <div><Link to='/admin'>Upload Products</Link></div>
-        <div><Link to='/addemployee'>Add Employee</Link></div>
-        <div><Link to='/change-image'>Change Picture</Link></div>
+      <Dropdown.Menu className="dropdown">
+        <div><Link to='/admin' className="dropdown-link">Upload Products</Link></div>
+        <div><Link to='/addemployee' className="dropdown-link">Add Employee</Link></div>
+        <div><Link to='/change-image' className="dropdown-link">Change Picture</Link></div>
       </Dropdown.Menu>
     </Dropdown>
     :''}

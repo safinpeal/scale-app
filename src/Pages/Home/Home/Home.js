@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import PartnerCarousel from '../../Shared/PartnerCarousel/PartnerCarousel';
 //import Navigation from '../../Shared/Navigation/Navigation';
 import Carousel from '../Carousel/Carousel';
 import ProductList from '../Lists/ProductList';
@@ -34,9 +35,10 @@ const Home = () => {
             </div>
             <div>
                 <h3>Our Partners</h3>
-                <h5>add partners carousel</h5>
+                <PartnerCarousel></PartnerCarousel>
+               
             </div>
-            <div>Footer</div>
+            
         </div>
     );
 };
