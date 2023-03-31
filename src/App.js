@@ -19,6 +19,7 @@ import ImageController from './Pages/Admin/CarouselImage/Imagecontrol';
 import AllProducts from './Pages/AllProducts/AllProducts';
 import Footer from './Pages/Shared/Footer/Footer';
 import '@fortawesome/fontawesome-free/css/all.css';
+import Location from './Pages/Location/Location';
 
 function App() {
   const token = localStorage.getItem('Token');
@@ -69,6 +70,7 @@ function App() {
             <Route path="/addemployee" element={<ProtectedAdmin><Employee/></ProtectedAdmin>}/>
             <Route path="/change-image" element={<ProtectedAdmin><ImageController/></ProtectedAdmin>}/>
             <Route path="/notification" element={<Notifications/>}/>
+            <Route path="/language" element={<Location></Location>}/>
 
             
           </Routes>
