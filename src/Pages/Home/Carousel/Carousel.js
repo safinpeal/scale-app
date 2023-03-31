@@ -13,7 +13,7 @@ const CarouselComp = () => {
     })
   },[])
     return (
-      <div className="container">
+      <div >
         <Carousel>
           {images.map(image=>
             

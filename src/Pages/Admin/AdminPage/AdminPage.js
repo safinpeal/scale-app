@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 //import { AdminContext } from '../../../Context/AdminContext';
+import '../../Login/Login.css'
 
 const AdminPage = () => {
     const navigate =useNavigate(); 
@@ -132,19 +133,19 @@ const AdminPage = () => {
         return <div>Loading.....</div>
     }
     return (
-        <div>
+        <div className="form-container">
             <h1>This is admin page</h1>
             <form className='m-4'>
                 <div className='form-row'>
-                    <div className='form-group col-md-5'>
+                    <div className='form-group'>
                         <label htmlFor='name'>Product Name</label>
                         <input onChange={changeName} defaultValue={name} id='name' className='form-control' type='text'/>
                     </div>
-                    <div className='mb-3 col-md-5'>
+                    <div className='mb-3'>
                         <label htmlFor='category'>Category</label>
                         <input onChange={changeCat} defaultValue={cat} id='cat' className='form-control' type='text'/>
                     </div>
-                    <div className='my-2 col-md-5'>
+                    <div className='my-2'>
                     {/* onChange={(e)=>{setMadeIn(e.target.value)}} */}
                         <select id="select" value={madeIn} onChange={(e)=>{setMadeIn(e.target.value)}} className="form-select" aria-label="Default select example">
                             <option value="china">Made In China</option>
@@ -156,20 +157,20 @@ const AdminPage = () => {
                         <input  defaultChecked={top} onChange={()=>{setTop(!top)}} id='top' type='checkbox' className='mx-2'/>
                         <label htmlFor='top'>Add to Top Selling Products</label>
                     </div>
-                    <div className='form-group col-md-5'>
+                    <div className='form-group'>
                         <label className='form-label' htmlFor='file'>Upload a Image</label>
                         <input className='form-control' onChange={changeFile} type='file' id='file' name='file'/>
                     </div>
-                    <div className='form-group col-md-5'>
+                    <div className='form-group'>
                         <label className='form-label' htmlFor='pdf'>Upload a PDF</label>
                         <input className='form-control' onChange={changePdf} type='file' id='pdf' name='pdf'/>
                     </div>
-                    <div className='form-group col-md-5'>
+                    <div className='form-group'>
                         <label className='form-label' htmlFor='files'>Upload Other Images</label>
                         <input className='form-control' onChange={changeFiles} type='file' id='files' name='files' multiple/>
                     </div>
                     {!id?
-                    <button onClick={uploadData} disabled={disable} className='btn btn-primary m-4'>Save</button>:
+                    <button  onClick={uploadData} disabled={disable} className='btn btn-primary m-4 login-btn'>Save</button>:
                     <button onClick={updateData} disabled={disable} className='btn btn-primary m-4'>Update</button>
                     }
                 </div>

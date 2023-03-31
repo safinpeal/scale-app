@@ -1,0 +1,37 @@
+.select-style {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='5' viewBox='0 0 2 5'%3E%3Cpath fill='%fill='%23fff'' d='M4 5L0 0h8z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position: right center;
+    background-size: 15px 8px;
+    background-color: white;
+    transition: transform 0.3s ease;
+    border: none;
+    color: white;
+    padding: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: rgb(25, 88, 226);
+}
+
+.select-style:hover {
+    transform: scale(1.1);
+}
+
+.select-style option {
+    background-color: #35e244;
+    /* Set the background color of the options */
+    color: #fff;
+    /* Set the color of the text */
+    padding: 10px;
+}
+
+.select-style::-ms-expand {
+    display: none;
+    /* Hide the default arrow on IE10 and IE11 */
+}

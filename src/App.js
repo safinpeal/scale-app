@@ -19,12 +19,22 @@ import ImageController from './Pages/Admin/CarouselImage/Imagecontrol';
 import AllProducts from './Pages/AllProducts/AllProducts';
 import Footer from './Pages/Shared/Footer/Footer';
 import '@fortawesome/fontawesome-free/css/all.css';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 function App() {
   const token = localStorage.getItem('Token');
   const [admin,setAdmin] = useState();
   const [check,setCheck]=useState(true);
   const [notification,setNotification]=useState([]);
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+  }, []);
   useEffect(()=>{
     axios.get('http://localhost:5000/notification')
     .then(response => {

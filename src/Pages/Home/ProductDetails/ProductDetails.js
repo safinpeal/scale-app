@@ -61,7 +61,7 @@ function ProductDetails(){
 
     return (
         <div>
-            <div>This page Showing the Details</div>
+            <h4>Product Details</h4>
             <div className="container">
                 <div className="row">
                    <div className="col border border-2 rounded mt-5">

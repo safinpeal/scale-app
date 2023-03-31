@@ -2,7 +2,7 @@ import React from 'react';
 import Navigation from '../Shared/Navigation/Navigation';
 import { useRef } from 'react';
 import axios from 'axios';
-
+import '../Login/Login.css'
 const Contact = () => {
     const yourName= useRef(null);
         const yourEmail=useRef(null);
@@ -32,9 +32,10 @@ const Contact = () => {
     return (
         <div>
             
-            <h1>This is contact us page</h1>
-            <div>Tell ous about your query</div>
-            <form className='container border border-2 rounded p-3' onSubmit={handleSubmit}>
+                     <h1 data-aos="zoom-in-right">Drop your query </h1>
+                     <h4 data-aos="zoom-in-left">We will contact you soon</h4>
+          
+            <form data-aos="zoom-in-left" className='container border border-2 mt-5 rounded p-3' onSubmit={handleSubmit}>
                     <div className='row mt-3 g-5'>
                         <div className='col-md'>
                         <label htmlFor='name' className='form-label'>Your Name</label>
@@ -55,7 +56,7 @@ const Contact = () => {
                         <textarea id="text" className='form-control' ref={yourQuery}></textarea>
                         </div>
                     </div>
-                    <button type='submit' className='btn btn-primary mb-3'>Submit</button>
+                    <button type='submit' className='btn btn-primary mb-3 login-btn'>Submit</button>
             </form>
         </div>
     );

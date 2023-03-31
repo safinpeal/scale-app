@@ -1,0 +1,30 @@
+/* .form-login {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+} */
+.form-container {
+
+    margin: 0 auto;
+    width: 50%;
+}
+
+.login-btn {
+    border: 2px solid rgb(76, 84, 206);
+    background: none;
+    padding: 10px 20px;
+    margin-top: 2px;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background: rgb(104, 37, 190);
+    color: white;
+    font-weight: bold;
+}

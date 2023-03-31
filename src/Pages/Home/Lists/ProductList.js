@@ -7,7 +7,7 @@ function ProductList(props){
 
     return(
         
-          <div className="card h-100 trans">
+          <div className="card h-100 trans"data-aos="zoom-in">
             <div className="image">
             <img src={server+props.product.image} className="card-img-top img-fluid card-img" alt="..."/>
             </div>
