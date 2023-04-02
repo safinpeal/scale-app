@@ -14,3 +14,8 @@
 .dropdown-link:hover {
     color: blueviolet;
 }
+
+.navbar-brand img {
+    height: 100px;
+    /* Change this value as needed */
+}

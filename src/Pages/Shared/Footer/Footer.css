@@ -16,3 +16,34 @@
 .whatsapp {
     color: green;
 }
+
+.header-style {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.link-style {
+    text-decoration: none;
+    color: cornsilk;
+}
+
+
+.seperator::before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+    background-color: #ccc;
+    margin-right: 10px;
+}
+
+.head-address {
+    color: cornsilk;
+    font-size: 15px;
+}
+
+.footer-bottom {
+    padding-bottom: 25px;
+    padding-top: 10px;
+}
