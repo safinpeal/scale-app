@@ -32,7 +32,7 @@ function Login(){
                     <label htmlFor='password'>Password</label>
                     <input onChange={(e)=>setPassword(e.target.value)} id='password' className='form-control' type='password'/>
                 </div>
-                <button type='submit' className="btn btn-primary login-btn">Login</button>
+                <button type='submit' className="btn btn-primary login-btn mt-5">Login</button>
             </div>
             </form>
         </div>

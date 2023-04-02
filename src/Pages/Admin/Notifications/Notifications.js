@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { NotificationContext } from '../../../Context/NotificationContext';
 
-
+import './Notification.css';
 const Notifications = () => {
     let count=0;
     const [tableData,setTableData]=useState([]);
@@ -31,8 +31,8 @@ const Notifications = () => {
                  
     }
     return (
-        <div>
-            <table class="table">
+        <div className="table-responsive">
+            <table class="table table-data">
   <thead>
     <tr>
       <th scope="col">Serial</th>

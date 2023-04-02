@@ -1,0 +1,47 @@
+@media (max-width: 991.98px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table {
+        display: block;
+        width: 100%;
+    }
+
+    .table thead {
+        display: none;
+    }
+
+    .table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .table tbody tr {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .table tbody td {
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table tbody td:before {
+        content: attr(data-label);
+        float: center;
+        font-weight: bold;
+    }
+}
