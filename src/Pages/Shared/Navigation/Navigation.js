@@ -44,7 +44,7 @@ const Navigation = () => {
          <NavLink to="contact" className="nav-link">Contact</NavLink>
         </li>
         <li class="nav-item">
-          <NavLink to="/language" className="nav-link">Language</NavLink>
+          <NavLink to="/language" className="nav-link">Location</NavLink>
         </li>
     {admin? 
       <Dropdown>

@@ -6,6 +6,12 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/* 
+.trans {
+    height: 300px;
+
+} */
+
 .trans:hover {
     transform: scale(1.02, 1.02);
     transition: transform .4s ease-out;
@@ -14,11 +20,12 @@
     box-shadow: -10px 10px 15px rgba(54, 151, 207, 0.5)
 }
 
+
 .card-img {
     width: 100%;
-    max-height: 350px;
+    height: 30vw;
 }
 
 .image {
-    height: 400px;
+    height: 35vw;
 }
