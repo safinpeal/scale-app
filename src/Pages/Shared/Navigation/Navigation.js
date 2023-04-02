@@ -4,6 +4,7 @@ import { AdminContext } from '../../../Context/AdminContext';
 import { NotificationContext } from '../../../Context/NotificationContext';
 import Dropdown from 'react-bootstrap/Dropdown';
 import './Navigation.css';
+import logo from '../../../images/336636949_1239739866906801_6136007535206307080_n.jpg'
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const Navigation = () => {
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="/">Navbar</a>
+    <a class="navbar-brand" href="/"><img src={logo}alt="Logo"/></a>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -44,7 +45,7 @@ const Navigation = () => {
          <NavLink to="contact" className="nav-link">Contact</NavLink>
         </li>
         <li class="nav-item">
-          <NavLink to="/language" className="nav-link">Location</NavLink>
+          <NavLink to="/language" className="nav-link">Gallery</NavLink>
         </li>
     {admin? 
       <Dropdown>

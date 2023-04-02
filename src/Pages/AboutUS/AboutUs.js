@@ -45,6 +45,7 @@ Our team of experts is always on hand to provide advice, assistance, and trouble
 At Innovative Technology International, we are committed to building long-term relationships with our customers based on trust, reliability, and exceptional service. Thank you for considering us as your partner in the digital weighing scale industry.</p>
                 </div>
             </div>
+            <br></br>
 
 <MessageOfChairman></MessageOfChairman>
         </div>

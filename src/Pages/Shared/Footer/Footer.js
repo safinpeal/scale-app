@@ -16,33 +16,38 @@ import './Footer.css';
 const Footer = () => {
     return (
         <div className="footer">
-            <footer className="bg-dark text-light">
+            <footer className="bg-dark text-light footer-bottom">
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-md-6">
-        <p className="header">Who We are</p>
-       <Link to="/">Home</Link><br></br>
-    <Link to="/about">About Us</Link><br></br>
-    <Link to="/about">Message from CEO</Link><br></br>
-    <Link to="/about">Message from CEO</Link>
+      <div class="col-lg-3 col-md-6 ">
+        <p className="header header-style">Who We are</p>
+<div className="display ">
+<Link to="/" className="link-style">Home</Link><br></br>
+    <Link to="/" className="link-style">About Us</Link><br></br>
+    <Link to="/about" className="link-style">Message from CEO</Link><br></br>
+    <Link to="/about" className="link-style">Message from CEO</Link>
+</div>
 
       </div>
-      <div class="col-lg-3 col-md-6">
-      <p className="header">Contact Us</p>
-       <Link to="contact">Contact</Link><br></br>
-    <Link to="/location">Google Map</Link><br></br>
-    <Link to="/about">Message from CEO</Link><br></br>
-    <Link to="/about">Message from CEO</Link>
+      <div class="col-lg-3 col-md-6 ">
+      <p className="header header-style seperator">Head Office</p>
+       <Link to="contact" className="link-style">Contact</Link><br></br>
+    <Link to="/location" className="link-style">Google Map</Link><br></br>
+    <Link to="/about" className="link-style">Message from CEO</Link><br></br>
+    <Link to="/about" className="link-style">Message from CEO</Link>
       </div>
       <div class="col-lg-3 col-md-6">
-      <p className="header">Our Branch</p>
-       <Link to="/">Home</Link><br></br>
-    <Link to="/about">About Us</Link><br></br>
-    <Link to="/about">Message from CEO</Link><br></br>
-    <Link to="/about">Message from CEO</Link>
+      <p className="header header-style">Head Office</p>
+     <p className="head-address">
+       Innovative Technology International <br></br>
+       118,Bawany Nagar<br></br>
+       Demra,Dhaka-1360<br></br>
+       Email : 
+       
+     </p>
       </div>
       <div class="col-lg-3 col-md-6">
-      <p className="header">Follow Us</p>
+      <p className="header header-style">Follow Us</p>
       <div class="footer-icons">
       <span class="fa-stack fa-lg color">
       <FontAwesomeIcon icon={faYoutube} />
