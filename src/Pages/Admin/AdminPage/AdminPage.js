@@ -92,6 +92,14 @@ const AdminPage = () => {
             data.append('cat',cat);
             data.append('madeIn',madeIn);
             data.append('top',top);
+            data.append('file',files);
+            data.append('pdf',pdf);
+            data.append('size',othersImg.length);
+            for(let i =0; i<othersImg.length;i++)
+    
+            {
+                data.append(`file-${i}`, othersImg[i])
+            }
             axios.post('http://localhost:5000/updateproduct',data)
             .then(res=>{
                 setDisable(false);
