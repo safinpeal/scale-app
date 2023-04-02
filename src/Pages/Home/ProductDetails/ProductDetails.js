@@ -61,10 +61,13 @@ function ProductDetails(){
         .then(res=>{
 
             setDetails(res.data);
-            const arr = res.data.othernames.split(',');
-            setOthers(arr);
             setCheck(false);
-            console.log(res.data);
+            if(res.data.othernames.length!=0)
+            {
+                const arr = res.data.othernames.split(',');
+                setOthers(arr);
+                console.log(res.data);
+            }
         })
     },[])
     if(check)
@@ -74,17 +77,21 @@ function ProductDetails(){
     return (
         <div>
             <h4>Product Details</h4>
-            <div className="container">
-                <div className="row">
-                   <div className="col border border-2 rounded mt-5">
+            <div className="container ">
+                <div className="row justify-content-center">
+                   <div className={others.length?"col-md-6":"col-md-10"+"col-10 border border-2 rounded mt-5"}>
                       <img id="image" onClick={()=>{showModal(details.image)}} height="100%" width="100%" src={server+details.image} title="click to see full image" alt={details.image}/>
                     </div> 
-                   <div className="col mt-5">
-                    {others.length}
+                   <div className="col-md-6 col-10 mt-5">
+                    
                      {others.map((other)=>
                         <img id="image" alt={other} onClick={()=>{showModal(other)}} className="m-2 border border-2 rounded" width="80%" height="200px" key={other} src={server+other} title="click to see full image"/>
                      )}
                    </div>
+                </div>
+                <div>
+                    <div>Short Description: {details.category}</div> 
+                    <div>Made in {details.madeIn}</div>
                 </div>
  <br></br>
  <br></br>
