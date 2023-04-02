@@ -45,7 +45,7 @@ const Navigation = () => {
          <NavLink to="contact" className="nav-link">Contact</NavLink>
         </li>
         <li class="nav-item">
-          <NavLink to="/language" className="nav-link">Gallery</NavLink>
+          <NavLink to="/my-gallery" className="nav-link">Gallery</NavLink>
         </li>
     {admin? 
       <Dropdown>
@@ -57,6 +57,7 @@ const Navigation = () => {
         <div><Link to='/admin' className="dropdown-link">Upload Products</Link></div>
         <div><Link to='/addemployee' className="dropdown-link">Add Employee</Link></div>
         <div><Link to='/change-image' className="dropdown-link">Change Picture</Link></div>
+        <div><Link to='/gallery-image' className="dropdown-link">Gallery Control</Link></div>
       </Dropdown.Menu>
     </Dropdown>
     :''}
