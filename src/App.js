@@ -24,6 +24,8 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 
 import Location from './Pages/Location/Location';
+import Gallery from './Pages/Admin/Gallery/Gallery';
+import Mygallery from './Pages/Mygallery/Mygallery';
 //dbb92a44fcba5870b3a29def07b832b3fcb72db1
 
 function App() {
@@ -83,7 +85,8 @@ function App() {
             <Route path="/addemployee" element={<ProtectedAdmin><Employee/></ProtectedAdmin>}/>
             <Route path="/change-image" element={<ProtectedAdmin><ImageController/></ProtectedAdmin>}/>
             <Route path="/notification" element={<Notifications/>}/>
-            <Route path="/language" element={<Location></Location>}/>
+            <Route path="/my-gallery" element={<Mygallery></Mygallery>}/>
+            <Route path="/gallery-image" element={<ProtectedAdmin><Gallery></Gallery></ProtectedAdmin>}/>
 
             
           </Routes>
