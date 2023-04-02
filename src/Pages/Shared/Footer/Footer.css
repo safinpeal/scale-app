@@ -11,10 +11,30 @@
 .facebook {
     color: blue;
     font-size: 200px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.facebook:hover {
+    box-shadow: 0 0 20px 10px rgba(9, 224, 195, 0.2);
+    transform: scale(1.05);
+    opacity: 0.8;
+    background-color: white;
 }
 
 .whatsapp {
     color: green;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-out, opacity 0.3s ease-out;
+    cursor: pointer;
+}
+
+.whatsapp:hover {
+    box-shadow: 0 0 20px 10px rgba(9, 224, 195, 0.2);
+    transform: scale(1.05);
+    opacity: 0.8;
+    color: green;
+    background-color: white;
 }
 
 .header-style {
@@ -47,3 +67,5 @@
     padding-bottom: 25px;
     padding-top: 10px;
 }
+
+.hover {}

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import './ProductList.css';
+import '../../Login/Login.css'
 
 function ProductList(props){
 
@@ -18,7 +19,7 @@ function ProductList(props){
             </div>
             <div class="card-footer">
             <Link to={`/productdetails/${props.product._id}`}>
-              <button className="btn btn-primary">Show Details</button>
+              <button className="btn btn-primary login-btn">Show Details</button>
             </Link>
             </div>
           

@@ -4,6 +4,7 @@ import { Modal } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { AdminContext } from "../../../Context/AdminContext";
 import './ProductDetails.css';
+import '../../Login/Login.css'
 
 function ProductDetails(){
     const navigate = useNavigate();
@@ -74,8 +75,8 @@ function ProductDetails(){
                    </div>
                 </div>
                 
-                {admin?<button onClick={()=>edititem(details)} className="btn btn-warning mx-1"> Edit</button> :""}
-                {admin?<button onClick={()=>{deleteitem(details)}} disabled={disable} className="btn btn-danger mx-1"> Delete</button> :""}
+                {admin?<button onClick={()=>edititem(details)} className="btn btn-warning mx-1 login-btn"> Edit</button> :""}
+                {admin?<button onClick={()=>{deleteitem(details)}} disabled={disable} className="btn btn-danger mx-1 login-btn"> Delete</button> :""}
                 <div>{msg}</div>
             </div>
             {/* modal */}

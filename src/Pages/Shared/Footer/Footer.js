@@ -42,14 +42,15 @@ const Footer = () => {
        Innovative Technology International <br></br>
        118,Bawany Nagar<br></br>
        Demra,Dhaka-1360<br></br>
-       Email : 
+       Email : innotecin@gmail.com<br></br>
+       Mobile : 01517140811
        
      </p>
       </div>
       <div class="col-lg-3 col-md-6">
       <p className="header header-style">Follow Us</p>
       <div class="footer-icons">
-      <span class="fa-stack fa-lg color">
+      <span class="fa-stack fa-lg color hover">
       <FontAwesomeIcon icon={faYoutube} />
    </span>
    <span class="fa-stack fa-lg">
