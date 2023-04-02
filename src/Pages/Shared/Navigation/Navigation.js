@@ -64,10 +64,11 @@ const Navigation = () => {
         {admin?<li class="nav-item">
         <NavLink to="/admin" className="nav-link"><button onClick={logout} className='btn btn-secondary'>Logout</button></NavLink>
         </li>:''}
+        {admin?
         <li class="nav-item">
         <NavLink to="/notification" className="nav-link"><button className='btn btn-secondary'>Notifications({notification.length})</button></NavLink>
         </li>
-        
+        :""}
       </ul>
       {/* <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>

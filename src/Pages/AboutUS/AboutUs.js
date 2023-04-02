@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import MessageOfChairman from '../Shared/MessageOfChairman/MessageOfChairman';
 import Navigation from '../Shared/Navigation/Navigation';
 import './AboutUs.css'
+import EmployeeList from './Employeelist';
 
 
 const AboutUs = () => {
@@ -47,7 +48,11 @@ At Innovative Technology International, we are committed to building long-term r
             </div>
             <br></br>
 
-<MessageOfChairman></MessageOfChairman>
+            <MessageOfChairman></MessageOfChairman>
+            <div className='mt-5'>
+                <h2>Our Employees</h2>
+                <EmployeeList></EmployeeList>
+            </div>
         </div>
     );
 };
