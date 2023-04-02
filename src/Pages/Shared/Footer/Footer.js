@@ -65,7 +65,7 @@ const Footer = () => {
    <span class="fa-stack fa-lg whatsapp ">
    {/* <i class="fas fa-circle fa-stack-2x"></i> */}
     
-      <FontAwesomeIcon  icon={faWhatsapp} />
+      <Link to="tel:01517140811"></Link>
 
    </span>
 
