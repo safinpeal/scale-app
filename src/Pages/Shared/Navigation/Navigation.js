@@ -4,7 +4,7 @@ import { AdminContext } from '../../../Context/AdminContext';
 import { NotificationContext } from '../../../Context/NotificationContext';
 import Dropdown from 'react-bootstrap/Dropdown';
 import './Navigation.css';
-import logo from '../../../images/336636949_1239739866906801_6136007535206307080_n.jpg'
+import logo from '../../../images/innovative-01.png'
 
 const Navigation = () => {
   const navigate = useNavigate();

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const EmployeeList=()=>{
     const [list,setList]=useState([]);
-    const server = "http://localhost:5000/employee";
+    const server = "http://localhost:5000/employee/";
     useEffect(()=>{
         axios.get('http://localhost:5000/get-employee')
         .then(res=>{
@@ -14,6 +14,13 @@ const EmployeeList=()=>{
     },[])
     return(
         <div>
+            <div className="container">
+                <div className="row">
+                    <div className="image">
+                        <img src="" alt="" />
+                    </div>
+                </div>
+            </div>
             {list.map(emp=>
             <div key={emp._id}>
                {emp.name}||{ server+emp.image }||{emp.designation}||{emp.phone}

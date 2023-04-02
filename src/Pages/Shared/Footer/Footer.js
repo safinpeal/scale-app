@@ -66,7 +66,7 @@ const Footer = () => {
    <span class="fa-stack fa-lg whatsapp ">
    {/* <i class="fas fa-circle fa-stack-2x"></i> */}
     
-      <Link to="intent://send/[01517140811]#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end"><FontAwesomeIcon icon={faWhatsapp} /></Link>
+      <Link to="https://wa.me/1234567890?text=Hello,%20I%20have%20a%20question" target="_blank"><FontAwesomeIcon icon={faWhatsapp} /></Link>
 
    </span>
 
