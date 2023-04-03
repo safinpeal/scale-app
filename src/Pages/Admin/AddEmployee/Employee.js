@@ -19,7 +19,7 @@ const Employee=()=>{
         formdata.append('phone',phone);
         formdata.append('designation',desig);
         formdata.append('file',file);
-        axios.post('http://localhost:5000/add-employee',formdata)
+        axios.post('https://server.scaleiti.com/add-employee',formdata)
         .then(res=>{
             if(res.data.status==200)
             {
@@ -49,7 +49,7 @@ const Employee=()=>{
 
     const deleteEmp=(emp)=>{
         if(token){
-            axios.post('http://localhost:5000/delete-employee',{id:emp._id,image:emp.image,token})
+            axios.post('https://server.scaleiti.com/delete-employee',{id:emp._id,image:emp.image,token})
             .then(res=>{
                 //console.log(res.data);
                 if(res.data.status==0)
@@ -71,7 +71,7 @@ const Employee=()=>{
         }
     };
     useEffect(()=>{
-        axios.get('http://localhost:5000/get-employee')
+        axios.get('https://server.scaleiti.com/get-employee')
         .then(res=>{
             setList(res.data);
             //console.log(res.data)
@@ -90,7 +90,7 @@ const Employee=()=>{
                 </div>
                 <div className="col-6">
                     <label className="form-label" htmlFor="phn">Phone</label>
-                    <input onChange={(e)=>{setPhone(e.target.value)}} className="form-control" type="number" id="phn"/>
+                    <input onChange={(e)=>{setPhone(e.target.value)}} className="form-control" type="text" id="phn"/>
                 </div>
                 <div className="col-6">
                     <label className="form-label" htmlFor="deg">Designation</label>

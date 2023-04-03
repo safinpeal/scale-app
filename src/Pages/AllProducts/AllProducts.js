@@ -22,7 +22,7 @@ const AllProducts=()=>{
         
     }
     useEffect(()=>{
-        axios.get('http://localhost:5000/getproducts')
+        axios.get('https://server.scaleiti.com/getproducts')
         .then(res=>{
             setProducts(res.data);
             setData(res.data);

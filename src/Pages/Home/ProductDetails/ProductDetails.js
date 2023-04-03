@@ -10,7 +10,7 @@ function ProductDetails(){
     const navigate = useNavigate();
     const {id} = useParams();
     const [admin,setAdmin]=useContext(AdminContext);
-    const server = "http://localhost:5000/images/";
+    const server = "https://server.scaleiti.com/images/";
     const [details,setDetails] = useState();
     const [others,setOthers] = useState([]);
     const [check,setCheck] = useState(true);
@@ -28,7 +28,7 @@ function ProductDetails(){
         navigate('/admin/'+product._id);
     }
     const download=(pdf)=>{
-        axios.get('http://localhost:5000/pdf/'+pdf,{responseType:'blob'})
+        axios.get('https://server.scaleiti.com/pdf/'+pdf,{responseType:'blob'})
         .then(res=>{
             const url = window.URL.createObjectURL(new Blob([res.data]));
             const link = document.createElement('a');
@@ -41,7 +41,7 @@ function ProductDetails(){
     const deleteitem=(product)=>{
         setDisable(true);
         if(token){
-            axios.post('http://localhost:5000/deleteproduct',{product,token})
+            axios.post('https://server.scaleiti.com/deleteproduct',{product,token})
             .then(res=>{
               //console.log(res.data);
               setDisable(false);
@@ -57,7 +57,7 @@ function ProductDetails(){
         }
     }
     useEffect(()=>{
-        axios.post('http://localhost:5000/getdetails',{id})
+        axios.post('https://server.scaleiti.com/getdetails',{id})
         .then(res=>{
 
             setDetails(res.data);

@@ -16,7 +16,7 @@ const Home = () => {
         console.log(product);
     }
     useEffect(()=>{
-        axios.get('http://localhost:5000/gettopproducts')
+        axios.get('https://server.scaleiti.com/gettopproducts')
         .then(res=>{
             console.log(res.data);
             setProducts(res.data);

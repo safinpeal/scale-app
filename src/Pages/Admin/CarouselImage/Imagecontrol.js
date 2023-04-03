@@ -7,7 +7,7 @@ const ImageController=()=>{
     const [images,setImages]= useState([]);
     const [modal, setModal] = useState(false);
     const [modalImage, setModalImage]= useState('');
-    const server = "http://localhost:5000/CarouselImage/";
+    const server = "https://server.scaleiti.com/CarouselImage/";
     const token = localStorage.getItem('Token');
     const [msg,setMsg]= useState('');
     const showModal =(image)=>{ 
@@ -25,7 +25,7 @@ const ImageController=()=>{
             const formdata = new FormData();
             formdata.append('file',file);
             formdata.append('token',token);
-            axios.post('http://localhost:5000/add-image',formdata)
+            axios.post('https://server.scaleiti.com/add-image',formdata)
             .then(res=>{
                 if(res.data.status==200)
                 {
@@ -50,7 +50,7 @@ const ImageController=()=>{
 
     const deleteImage=(image)=>{
         if(token){
-            axios.post('http://localhost:5000/delete',{id:image._id,name:image.imageUrl,token})
+            axios.post('https://server.scaleiti.com/delete',{id:image._id,name:image.imageUrl,token})
             .then(res=>{
                 if(res.data.status==200)
                 {
@@ -73,7 +73,7 @@ const ImageController=()=>{
         }
     };
     useEffect(()=>{
-        axios.get('http://localhost:5000/carousel-image')
+        axios.get('https://server.scaleiti.com/carousel-image')
         .then((res)=>{
             setImages(res.data);
             //console.log(res.data);

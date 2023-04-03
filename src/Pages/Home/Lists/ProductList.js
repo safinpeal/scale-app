@@ -4,7 +4,7 @@ import '../../Login/Login.css'
 
 function ProductList(props){
 
-    const server = "http://localhost:5000/images/";
+    const server = "https://server.scaleiti.com/images/";
 
     return(
         

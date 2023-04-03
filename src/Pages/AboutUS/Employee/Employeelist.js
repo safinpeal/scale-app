@@ -6,9 +6,9 @@ import './Employeelist.css'
 
 const EmployeeList=()=>{
     const [list,setList]=useState([]);
-    const server = "http://localhost:5000/employee/";
+    const server = "https://server.scaleiti.com/employee/";
     useEffect(()=>{
-        axios.get('http://localhost:5000/get-employee')
+        axios.get('https://server.scaleiti.com/get-employee')
         .then(res=>{
             setList(res.data);
             //console.log(res.data)
