@@ -90,7 +90,7 @@ const Employee=()=>{
                 </div>
                 <div className="col-6">
                     <label className="form-label" htmlFor="phn">Phone</label>
-                    <input onChange={(e)=>{setPhone(e.target.value)}} className="form-control" type="number" id="phn"/>
+                    <input onChange={(e)=>{setPhone(e.target.value)}} className="form-control" type="text" id="phn"/>
                 </div>
                 <div className="col-6">
                     <label className="form-label" htmlFor="deg">Designation</label>
