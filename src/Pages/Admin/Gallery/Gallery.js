@@ -14,7 +14,7 @@ const Gallery =()=>{
         const data = new FormData();
         data.append('token',token);
         data.append('file',file);
-        axios.post('http://localhost:5000/add-gallery',data)
+        axios.post('https://server.scaleiti.com/add-gallery',data)
         .then(res=>{
             //console.log(res.data);
             setDisable(false);

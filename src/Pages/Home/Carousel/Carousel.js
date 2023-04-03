@@ -4,9 +4,9 @@ import Carousel from 'react-bootstrap/Carousel';
 
 const CarouselComp = () => {
   const [images, setImages]=useState([]);
-  const server = "http://localhost:5000/CarouselImage/";
+  const server = "https://server.scaleiti.com/CarouselImage/";
   useEffect(()=>{
-    axios.get('http://localhost:5000/carousel-image')
+    axios.get('https://server.scaleiti.com/carousel-image')
     .then((res)=>{
         setImages(res.data);
         console.log(res.data);

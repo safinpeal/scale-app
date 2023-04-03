@@ -43,7 +43,7 @@ function App() {
     });
   }, []);
   useEffect(()=>{
-    axios.get('http://localhost:5000/notification')
+    axios.get('https://server.scaleiti.com/notification')
     .then(response => {
       
       setNotification(response.data);
@@ -55,7 +55,7 @@ function App() {
 },[])
   useEffect(()=>{
       if(token){
-        axios.post('http://localhost:5000/check-authentication',{token})
+        axios.post('https://server.scaleiti.com/check-authentication',{token})
         .then((res)=>{
           setAdmin(res.data.id)
           //console.log(res.data);

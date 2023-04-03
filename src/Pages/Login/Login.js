@@ -11,7 +11,7 @@ function Login(){
     const [password, setPassword] = useState('');
     const login=(e)=>{
         e.preventDefault();
-        axios.post('http://localhost:5000/login',{email,password}).then(res=>{
+        axios.post('https://server.scaleiti.com/login',{email,password}).then(res=>{
             if(res.data.token){
                 localStorage.setItem("Token",res.data.token)
                 setAdmin(res.data.user);
