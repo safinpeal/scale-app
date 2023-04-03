@@ -49,14 +49,7 @@
 }
 
 
-.seperator::before {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 1px;
-    background-color: #ccc;
-    margin-right: 10px;
-}
+
 
 .head-address {
     color: cornsilk;
@@ -86,6 +79,8 @@
 
 @media screen and (max-width: 767px) {
     .header {
-        margin-top: 5px;
+        margin-top: 3px;
     }
+
+
 }

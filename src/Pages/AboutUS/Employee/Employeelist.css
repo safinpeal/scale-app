@@ -3,10 +3,14 @@
     height: 30vw;
     background-color: #fff;
     box-shadow: inset 10px 0 10px -10px green, inset -10px 0 10px -10px green;
-
+    /* overflow-y: scroll; */
 
 
     margin: 0 auto;
+}
+
+.image-emp-img {
+    height: 15vw;
 }
 
 .card-img-emp {
@@ -36,17 +40,26 @@
     color: rgb(17, 190, 2);
 }
 
-.name {
-    color: crimson;
-}
+
 
 .emp-2 {
     border-radius: 50%;
 }
 
+.name {
+    color: crimson;
+}
 
 @media screen and (max-width: 767px) {
     .image-emp {
-        height: 100vw;
+        height: 130vw;
     }
+
+    .image-emp-img {
+        height: 50vw;
+    }
+
+    /* .name {
+        display: none;
+    } */
 }

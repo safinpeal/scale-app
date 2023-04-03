@@ -19,7 +19,9 @@ const EmployeeList=()=>{
             <div className="container">
                 <div className="row">
                     <div className="image-emp card" data-aos="zoom-in">
+                        <div className="image-emp-img">
                         <img src={farukvai} alt="" className="card-img-top card-img-emp rounded-circle mt-2"  />
+                        </div>
                         <div class="card-body text-center">
     <h5 class="card-title title-1">MD. Omor Faruk </h5>
     <h5 class="card-title title-2">CEO</h5>
@@ -31,7 +33,7 @@ const EmployeeList=()=>{
                 </div>
             </div>
 
-            <div className="container mt-3">
+            <div className="container">
                 <div className="row">
 
                 {list.map(emp=>
@@ -39,7 +41,9 @@ const EmployeeList=()=>{
                 <div key={emp._id}>
               
               <div className="image-emp card " data-aos="zoom-in">
-                       <img src={ server+emp.image } alt="" className="card-img-top card-img-emp emp-2 mt-1"  />
+                     <div className="image-emp-img">
+                     <img src={ server+emp.image } alt="" className="card-img-top card-img-emp emp-2 mt-1"  />
+                     </div>
                        <div class="card-body text-center">
    <h5 class="card-title title-1"> {emp.name} </h5>
    <h5 class="card-title title-2">{emp.designation}</h5>
@@ -47,7 +51,7 @@ const EmployeeList=()=>{
    
  </div>
  <div className="card-footer">
-     <p>Mobile: {emp.phone}</p>
+     <div><p>Mobile: {emp.phone}</p></div>
  </div>
  
                    </div>
