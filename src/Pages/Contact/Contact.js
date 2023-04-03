@@ -24,7 +24,7 @@ const Contact = () => {
         }
 
         console.log(formData);
-        axios.post('http://localhost:5000/contactinfo',formData).then(res=>{
+        axios.post('https://server.scaleiti.com/contactinfo',formData).then(res=>{
             console.log(res.data);
         })
         

@@ -3,7 +3,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 const PartnerCarousel = () => {
-  const server ="http://localhost:5000/partners"
+  const server ="https://server.scaleiti.com/partners"
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
@@ -26,10 +26,10 @@ const PartnerCarousel = () => {
     return (
         <div>
             <Carousel responsive={responsive} data-aos="zoom-in">
-  <div><img src="http://localhost:5000/partners/logo.webp" alt="logo.webp"/></div>
-  <div><img src="http://localhost:5000/partners/alco_logo.webp" alt="alco_logo.webp"/></div>
-  <div><img src="http://localhost:5000/partners/logo.webp" alt="logo.webp"/></div>
-  <div><img src="http://localhost:5000/partners/alco_logo.webp" alt="alco_logo.webp"/></div>
+  <div><img src="https://server.scaleiti.com/partners/logo.webp" alt="logo.webp"/></div>
+  <div><img src="https://server.scaleiti.com/partners/alco_logo.webp" alt="alco_logo.webp"/></div>
+  <div><img src="https://server.scaleiti.com/partners/logo.webp" alt="logo.webp"/></div>
+  <div><img src="https://server.scaleiti.com/partners/alco_logo.webp" alt="alco_logo.webp"/></div>
 </Carousel>
         </div>
     );

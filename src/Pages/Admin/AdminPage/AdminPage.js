@@ -55,7 +55,7 @@ const AdminPage = () => {
             {
                 data.append(`file-${i}`, othersImg[i])
             }
-            axios.post('http://localhost:5000/upload',data).then(res=>{
+            axios.post('https://server.scaleiti.com/upload',data).then(res=>{
                 //console.log(res.data);
                 setDisable(false);
                 if(res.data.status===200){
@@ -101,7 +101,7 @@ const AdminPage = () => {
             {
                 data.append(`file-${i}`, othersImg[i])
             }
-            axios.post('http://localhost:5000/updateproduct',data)
+            axios.post('https://server.scaleiti.com/updateproduct',data)
             .then(res=>{
                 setDisable(false);
                 if(res.data.status===200)
@@ -126,7 +126,7 @@ const AdminPage = () => {
             if(id)
             {
                 setCheck(true);
-                axios.post('http://localhost:5000/getdetails',{id}).then((res)=>{
+                axios.post('https://server.scaleiti.com/getdetails',{id}).then((res)=>{
                      //console.log(res.data);
                      setName(res.data.name);
                      setCat(res.data.category);

@@ -14,10 +14,10 @@ const Mygallery=()=>{
     const [images,setImages]=useState([]);
     const [disable,setDisable]=useState(false);
     const [msg,setMsg]=useState('');
-    const server = "http://localhost:5000/gallery/";
+    const server = "https://server.scaleiti.com/gallery/";
     const deleteit=(image)=>{
         setDisable(true);
-        axios.post('http://localhost:5000/delete-gallery',{token,image})
+        axios.post('https://server.scaleiti.com/delete-gallery',{token,image})
         .then(res=>{
             setDisable(false);
             console.log(res.data)
@@ -34,7 +34,7 @@ const Mygallery=()=>{
         })
     }
     useEffect(()=>{
-        axios.get('http://localhost:5000/get-gallery')
+        axios.get('https://server.scaleiti.com/get-gallery')
         .then(res=>{
             console.log(res.data);
             setImages(res.data);
@@ -49,12 +49,13 @@ const Mygallery=()=>{
          <div className="container-div " >
              <div className="row" data-aos="flip-up">
              {images.map(image=>
-<div className="col-lg-3 col-md-4 col-sm-6 display " >
+             <div className="col-lg-3 col-md-4 col-sm-6 display " key={image._id}>
 
              <div className="gallery-img mt-5" >
              <img  src={server+image.imageUrl} alt="" class="img-fluid"/>
+             <button className="btn btn-danger my-1" onClick={()=>{deleteit(image)}}>Delete</button>
              </div>
-            
+           
          </div>
 
          )}

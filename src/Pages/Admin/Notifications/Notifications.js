@@ -11,7 +11,7 @@ const Notifications = () => {
     const [tableData,setTableData]=useState([]);
     const{notification,setNotification}=useContext(NotificationContext);
     useEffect(()=>{
-        axios.get('http://localhost:5000/notification')
+        axios.get('https://server.scaleiti.com/notification')
         .then(response => {
           setTableData(response.data);
           setNotification(response.data);
@@ -22,7 +22,7 @@ const Notifications = () => {
         });
     },[])
     const handleDelete=(id)=>{
-       axios.post('http://localhost:5000/contactdelete',{id:id}).then(res=>{
+       axios.post('https://server.scaleiti.com/contactdelete',{id:id}).then(res=>{
            if(res){
                const newtableData=tableData.filter(data=>data._id !==id);
                setTableData(newtableData);

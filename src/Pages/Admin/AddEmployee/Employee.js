@@ -19,7 +19,7 @@ const Employee=()=>{
         formdata.append('phone',phone);
         formdata.append('designation',desig);
         formdata.append('file',file);
-        axios.post('http://localhost:5000/add-employee',formdata)
+        axios.post('https://server.scaleiti.com/add-employee',formdata)
         .then(res=>{
             if(res.data.status==200)
             {
@@ -49,7 +49,7 @@ const Employee=()=>{
 
     const deleteEmp=(emp)=>{
         if(token){
-            axios.post('http://localhost:5000/delete-employee',{id:emp._id,image:emp.image,token})
+            axios.post('https://server.scaleiti.com/delete-employee',{id:emp._id,image:emp.image,token})
             .then(res=>{
                 //console.log(res.data);
                 if(res.data.status==0)
@@ -71,7 +71,7 @@ const Employee=()=>{
         }
     };
     useEffect(()=>{
-        axios.get('http://localhost:5000/get-employee')
+        axios.get('https://server.scaleiti.com/get-employee')
         .then(res=>{
             setList(res.data);
             //console.log(res.data)
