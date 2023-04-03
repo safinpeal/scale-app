@@ -21,7 +21,7 @@ const Footer = () => {
     <div class="row">
       <div class="col-lg-3 col-md-6 ">
         <p className="header header-style">Who We are</p>
-<div className="display ">
+<div className="disp ">
 <Link to="/" className="link-style">Home</Link><br></br>
     <Link to="/" className="link-style">About Us</Link><br></br>
     <Link to="/about" className="link-style">Message from CEO</Link><br></br>

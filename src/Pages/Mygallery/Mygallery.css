@@ -1,0 +1,38 @@
+.gallery-img {
+
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.gallery-img img {
+    width: 100%;
+    width: 350px;
+    height: 300px;
+    height: 100%;
+
+}
+
+.gallery-img:hover {
+    box-shadow: 0 0 20px 10px rgba(13, 204, 125, 0.2);
+    transform: scale(1.05);
+    opacity: 1.2;
+    cursor: pointer;
+
+
+}
+
+.display {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+    .gallery-img {
+        width: 300px;
+        height: 350px;
+    }
+
+}

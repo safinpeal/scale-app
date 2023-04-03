@@ -12,10 +12,10 @@ function ProductList(props){
             <div className="image">
             <img src={server+props.product.image} className="card-img-top img-fluid card-img" alt="..."/>
             </div>
-            <div class="card-body">
-              <h5 className="card-title name">{props.product.name}</h5>
-              <p class="card-text">{props.product.category}</p>
-              <p class="card-text">Made in {props.product.madeIn}</p>
+            <div class="card-body products">
+              <h5 className="card-title product-name">{props.product.name}</h5>
+              {/* <p class="card-text product-cat">{props.product.category}</p> */}
+              <p class="card-text made-in">Made in {props.product.madeIn}</p>
             </div>
             <div class="card-footer">
             <Link to={`/productdetails/${props.product._id}`}>

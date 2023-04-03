@@ -3,11 +3,11 @@ import React from 'react';
 const MessageOfChairman = () => {
     return (
         <div>
-            <h1 data-aos="fade-up
+            <h1 data-aos="fade-up-right
             ">Message From CEO</h1>
             <div className="container">
                 <div className="row">
-                <p data-aos="fade-up
+                <p data-aos="fade-up-left
             ">
             Dear Valued Customers,<br></br>
 

@@ -90,7 +90,7 @@ function ProductDetails(){
                    </div>
                 </div>
                 <div>
-                    <div>Short Description: {details.category}</div> 
+                    <div><span className="short">Short Description:</span> {details.category}</div> 
                     <div>Made in {details.madeIn}</div>
                 </div>
  <br></br>

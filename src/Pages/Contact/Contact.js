@@ -62,6 +62,7 @@ const Contact = () => {
             <div className='mt-5'>
                 <h2 className='my-4'>View our location on Google Map</h2>
                 <Location></Location>
+                {/* //  */}
             </div>
         </div>
     );
