@@ -43,7 +43,7 @@ const Footer = () => {
        118,Bawany Nagar<br></br>
        Demra,Dhaka-1360<br></br>
        Email : innotecin@gmail.com<br></br>
-       Mobile : 01517140811
+       Mobile : 01301312134 
        
      </p>
       </div>

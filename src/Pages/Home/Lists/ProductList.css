@@ -6,9 +6,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
-/* 
-.trans {
-    height: 300px;
+
+/* .trans {
+    width: 85v;
+    display: flex;
+    justify-content: center;
 
 } */
 
@@ -28,6 +30,7 @@
 
 .image {
     height: 30vw;
+
 
 }
 
