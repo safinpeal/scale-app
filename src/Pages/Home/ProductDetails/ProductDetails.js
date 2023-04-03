@@ -89,17 +89,17 @@ function ProductDetails(){
                      )}
                    </div>
                 </div>
-                <div>
-                    <div><span className="short">Short Description:</span> {details.category}</div> 
-                    <div>Made in {details.madeIn}</div>
+                <div class="details-product">
+                    <div><span className="short">Short Description:</span> <span className="lekha">{details.category}</span></div> 
+                    <div> <span className="short">Imported From:</span>  <span className="lekha">{details.madeIn}</span></div>
                 </div>
  <br></br>
  <br></br>
                 
-                {admin?<button onClick={()=>edititem(details)} className="btn btn-warning mx-2 login-btn"> Edit</button> :""}
-                {admin?<button onClick={()=>{deleteitem(details)}} disabled={disable} className="btn btn-danger mx-2 login-btn"> Delete</button> :""}
+                {admin?<button onClick={()=>edititem(details)} className="btn btn-warning mx-2 my-5 login-btn"> Edit</button> :""}
+                {admin?<button onClick={()=>{deleteitem(details)}} disabled={disable} className="btn btn-danger mx-2 my-5 login-btn"> Delete</button> :""}
 
-                <button onClick={()=>download(details.pdf)} className="btn btn-primary mx-2 login-btn">Download Pdf</button>
+                <button onClick={()=>download(details.pdf)} className="btn btn-primary mx-2 my-5 login-btn">Download Pdf</button>
                 
                 <div>{msg}</div>
             </div>

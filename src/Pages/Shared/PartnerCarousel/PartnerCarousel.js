@@ -25,7 +25,7 @@ const PartnerCarousel = () => {
       };
     return (
         <div>
-            <Carousel responsive={responsive}>
+            <Carousel responsive={responsive} data-aos="zoom-in">
   <div><img src="http://localhost:5000/partners/logo.webp" alt="logo.webp"/></div>
   <div><img src="http://localhost:5000/partners/alco_logo.webp" alt="alco_logo.webp"/></div>
   <div><img src="http://localhost:5000/partners/logo.webp" alt="logo.webp"/></div>

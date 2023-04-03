@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 //import { AdminContext } from '../../../Context/AdminContext';
 import '../../Login/Login.css'
+import './AdminPage.css'
 
 const AdminPage = () => {
     const navigate =useNavigate(); 
