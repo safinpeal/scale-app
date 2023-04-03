@@ -151,7 +151,7 @@ const AdminPage = () => {
                         <input onChange={changeName} defaultValue={name} id='name' className='form-control' type='text'/>
                     </div>
                     <div className='mb-3'>
-                        <label htmlFor='category'>Category</label>
+                        <label htmlFor='category'>Short Description</label>
                         <input onChange={changeCat} defaultValue={cat} id='cat' className='form-control' type='text'/>
                     </div>
                     <div className='my-2'>
