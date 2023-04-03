@@ -1,3 +1,16 @@
 #image {
   cursor: pointer;
 }
+
+.short {
+  color: crimson;
+  font-weight: bold;
+}
+
+.details-product {
+  float: left;
+}
+
+.lekha {
+  font-weight: bold;
+}

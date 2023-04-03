@@ -20,6 +20,7 @@ import AllProducts from './Pages/AllProducts/AllProducts';
 import Footer from './Pages/Shared/Footer/Footer';
 import '@fortawesome/fontawesome-free/css/all.css';
 
+
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 

@@ -21,20 +21,20 @@ const Footer = () => {
     <div class="row">
       <div class="col-lg-3 col-md-6 ">
         <p className="header header-style">Who We are</p>
-<div className="display ">
+<div className="disp ">
 <Link to="/" className="link-style">Home</Link><br></br>
     <Link to="/" className="link-style">About Us</Link><br></br>
     <Link to="/about" className="link-style">Message from CEO</Link><br></br>
-    <Link to="/about" className="link-style">Message from CEO</Link>
+    <Link to="/productslist" className="link-style">Product List</Link>
 </div>
 
       </div>
       <div class="col-lg-3 col-md-6 ">
       <p className="header header-style seperator">Head Office</p>
-       <Link to="contact" className="link-style">Contact</Link><br></br>
+       <Link to="/contact" className="link-style">Contact</Link><br></br>
     <Link to="/location" className="link-style">Google Map</Link><br></br>
-    <Link to="/about" className="link-style">Message from CEO</Link><br></br>
-    <Link to="/about" className="link-style">Message from CEO</Link>
+    <Link to="/gallery" className="link-style">Gallery</Link><br></br>
+    
       </div>
       <div class="col-lg-3 col-md-6">
       <p className="header header-style">Head Office</p>
@@ -50,10 +50,11 @@ const Footer = () => {
       <div class="col-lg-3 col-md-6">
       <p className="header header-style">Follow Us</p>
       <div class="footer-icons">
-      <span class="fa-stack fa-lg color hover">
-      <FontAwesomeIcon icon={faYoutube} />
+      <span class="fa-stack fa-lg color youtube">
+      
+      <Link to="https://www.youtube.com/@sohojsikkha4708"><FontAwesomeIcon icon={faYoutube} /></Link>
    </span>
-   <span class="fa-stack fa-lg">
+   <span class="fa-stack fa-lg insta">
       
       <FontAwesomeIcon icon={faInstagram } />
    </span>
@@ -65,7 +66,7 @@ const Footer = () => {
    <span class="fa-stack fa-lg whatsapp ">
    {/* <i class="fas fa-circle fa-stack-2x"></i> */}
     
-      <Link to="tel:01517140811"></Link>
+      <Link to="https://wa.me/1234567890?text=Hello,%20I%20have%20a%20question" target="_blank"><FontAwesomeIcon icon={faWhatsapp} /></Link>
 
    </span>
 

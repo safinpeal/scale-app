@@ -23,9 +23,29 @@
 
 .card-img {
     width: 100%;
-    height: 30vw;
+    height: 25vw;
 }
 
 .image {
-    height: 35vw;
+    height: 30vw;
+}
+
+@media screen and (max-width: 767px) {
+    .card-img {
+        height: 50vw;
+    }
+
+    .image {
+        height: 60vw;
+    }
+}
+
+.product-name {
+    font-weight: bold;
+    color: crimson;
+}
+
+.products {
+
+    margin: 0 auto;
 }

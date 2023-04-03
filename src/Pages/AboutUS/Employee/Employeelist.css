@@ -1,0 +1,52 @@
+.image-emp {
+    width: 300px;
+    height: 30vw;
+    background-color: #fff;
+    box-shadow: inset 10px 0 10px -10px green, inset -10px 0 10px -10px green;
+
+
+
+    margin: 0 auto;
+}
+
+.card-img-emp {
+
+    max-width: 1.5in;
+    max-height: 1.5in;
+    margin: 0 auto;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-out, opacity 0.3s ease-out;
+
+    /* height: 20vw; */
+
+}
+
+.card-img-emp:hover {
+    box-shadow: 0 0 20px 10px rgba(13, 204, 125, 0.2);
+    transform: scale(1.05);
+    opacity: 1.2;
+}
+
+.title-1 {
+    color: black;
+    font-weight: bold;
+}
+
+.title-2 {
+    color: rgb(17, 190, 2);
+}
+
+.name {
+    color: crimson;
+}
+
+.emp-2 {
+    border-radius: 50%;
+}
+
+
+@media screen and (max-width: 767px) {
+    .image-emp {
+        height: 60vw;
+    }
+}
