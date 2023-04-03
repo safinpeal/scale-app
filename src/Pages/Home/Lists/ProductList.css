@@ -28,6 +28,7 @@
 
 .image {
     height: 30vw;
+
 }
 
 @media screen and (max-width: 767px) {
@@ -37,6 +38,7 @@
 
     .image {
         height: 60vw;
+
     }
 }
 

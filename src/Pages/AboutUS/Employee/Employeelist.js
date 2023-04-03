@@ -31,15 +31,15 @@ const EmployeeList=()=>{
                 </div>
             </div>
 
-            <div className="container mt-5">
+            <div className="container mt-3">
                 <div className="row">
 
                 {list.map(emp=>
-           <div className="col-lg-4 col-sm-12 col-md-6 mt-5">
+           <div className="col-lg-4 col-sm-12 col-md-6 mt-3">
                 <div key={emp._id}>
               
               <div className="image-emp card " data-aos="zoom-in">
-                       <img src={ server+emp.image } alt="" className="card-img-top card-img-emp emp-2 mt-2"  />
+                       <img src={ server+emp.image } alt="" className="card-img-top card-img-emp emp-2 mt-1"  />
                        <div class="card-body text-center">
    <h5 class="card-title title-1"> {emp.name} </h5>
    <h5 class="card-title title-2">{emp.designation}</h5>
