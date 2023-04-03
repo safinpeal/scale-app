@@ -53,7 +53,11 @@ const Mygallery=()=>{
 
              <div className="gallery-img mt-5" >
              <img  src={server+image.imageUrl} alt="" class="img-fluid"/>
+             {
+             admin?
              <button className="btn btn-danger my-1" onClick={()=>{deleteit(image)}}>Delete</button>
+             :""
+             }
              </div>
            
          </div>
