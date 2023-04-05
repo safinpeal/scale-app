@@ -25,6 +25,8 @@ const Admin=()=>{
                 {
                     setMsg("Wrong Password Provided");
                 }
+                document.getElementById('password').value='';
+                document.getElementById('newpassword').value='';
             })
         }
         else
