@@ -54,9 +54,11 @@ const Navigation = () => {
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="dropdown">
+        <div><Link to='/update-admin' className="dropdown-link">Update Admin</Link></div>
         <div><Link to='/admin' className="dropdown-link">Upload Products</Link></div>
         <div><Link to='/addemployee' className="dropdown-link">Add Employee</Link></div>
-        <div><Link to='/change-image' className="dropdown-link">Change Picture</Link></div>
+        <div><Link to='/change-image' className="dropdown-link">Carousel Picture</Link></div>
+        <div><Link to='/change-partners' className="dropdown-link">Update Partners</Link></div>
         <div><Link to='/gallery-image' className="dropdown-link">Gallery Control</Link></div>
       </Dropdown.Menu>
     </Dropdown>

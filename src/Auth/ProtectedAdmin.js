@@ -10,7 +10,8 @@ const ProtectedAdmin=({children})=>{
     const [check, setCheck] = useState(true);
     useEffect(()=>{
         if(token){
-            axios.post('https://server.scaleiti.com/check-authentication',{token})
+            //https://server.scaleiti.com
+            axios.post('http://localhost:5000/check-authentication',{token})
             .then((res)=>{
                 if(res.data.id)
                 {

@@ -27,6 +27,8 @@ import AOS from 'aos';
 import Location from './Pages/Location/Location';
 import Gallery from './Pages/Admin/Gallery/Gallery';
 import Mygallery from './Pages/Mygallery/Mygallery';
+import Admin from './Pages/Admin/Admindata/Admin';
+import Partners from './Pages/Admin/Partners/Partners';
 //dbb92a44fcba5870b3a29def07b832b3fcb72db1
 
 function App() {
@@ -82,12 +84,15 @@ function App() {
             <Route path="/contact" element={<Contact></Contact>}/>
             <Route path="/productdetails/:id" element={<ProductDetails/>}/>
             <Route path="/admin" element={<ProtectedAdmin><AdminPage/></ProtectedAdmin>}/>
+            <Route path="/update-admin" element={<ProtectedAdmin><Admin></Admin></ProtectedAdmin>}/>
             <Route path="/admin/:id" element={<ProtectedAdmin><AdminPage/></ProtectedAdmin>}/>
             <Route path="/addemployee" element={<ProtectedAdmin><Employee/></ProtectedAdmin>}/>
             <Route path="/change-image" element={<ProtectedAdmin><ImageController/></ProtectedAdmin>}/>
+            <Route path="/change-partners" element={<ProtectedAdmin><Partners></Partners></ProtectedAdmin>}/>
             <Route path="/notification" element={<Notifications/>}/>
             <Route path="/my-gallery" element={<Mygallery></Mygallery>}/>
             <Route path="/gallery-image" element={<ProtectedAdmin><Gallery></Gallery></ProtectedAdmin>}/>
+
 
             
           </Routes>

@@ -2,27 +2,26 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
 
-const ImageController=()=>{
+const Partners=()=>{
     const [file,setFile]=useState();
     const [images,setImages]= useState([]);
     const [modal, setModal] = useState(false);
-    const [disable,setDisable]=useState(false);
+    const [deletemodal, setDeletemodal] = useState(false);
     const [modalImage, setModalImage]= useState('');
-    const [deletemodal, setDeletemodal]= useState('');
-    const server = "https://server.scaleiti.com/CarouselImage/";
+    const [disable,setDisable]=useState(false);
+    const server = "https://server.scaleiti.com/partners/";
     const token = localStorage.getItem('Token');
     const [msg,setMsg]= useState('');
     const showModal =(image)=>{ 
         setModalImage(image);
         setModal(true);
     }
-    const hideModal =()=>{ setModal(false);}
     const showdeletemodal =(image)=>{ 
         setModalImage(image);
         setDeletemodal(true);
     }
     const hidedeletemodal=()=>{ setDeletemodal(false)}
-
+    const hideModal =()=>{ setModal(false);}
     const changeFile=(e)=>{
         setFile(e.target.files[0]);
         console.log(e.target.files[0]);
@@ -34,7 +33,7 @@ const ImageController=()=>{
             const formdata = new FormData();
             formdata.append('file',file);
             formdata.append('token',token);
-            axios.post('https://server.scaleiti.com/add-image',formdata)
+            axios.post('https://server.scaleiti.com/add-partners',formdata)
             .then(res=>{
                 setDisable(false);
                 if(res.data.status==200)
@@ -60,7 +59,7 @@ const ImageController=()=>{
 
     const deleteImage=(image)=>{
         if(token){
-            axios.post('https://server.scaleiti.com/delete',{id:image._id,name:image.imageUrl,token})
+            axios.post('https://server.scaleiti.com/delete-partners',{id:image._id,name:image.imageUrl,token})
             .then(res=>{
                 setDeletemodal(false);
                 if(res.data.status==200)
@@ -84,7 +83,7 @@ const ImageController=()=>{
         }
     };
     useEffect(()=>{
-        axios.get('https://server.scaleiti.com/carousel-image')
+        axios.get('https://server.scaleiti.com/partners-image')
         .then((res)=>{
             setImages(res.data);
             //console.log(res.data);
@@ -93,7 +92,7 @@ const ImageController=()=>{
 
     return(
         <div>
-            <h2 className="my-3">Carousel Image Controller</h2>
+            <h2 className="my-3">Partners Logo Controller</h2>
             <form className="mb-5">
                 <div className="m-3">
                     <label htmlFor='file'>Upload a Image</label>
@@ -141,4 +140,4 @@ const ImageController=()=>{
     )
 }
 
-export default ImageController;
+export default Partners;

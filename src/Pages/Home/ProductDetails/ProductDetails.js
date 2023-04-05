@@ -18,26 +18,34 @@ function ProductDetails(){
     const [modalImage, setModalImage]= useState('');
     const token = localStorage.getItem('Token');
     const [msg, setMsg]=useState('');
+    const [modaldata,setModaldata]=useState();
+    const [deletemodal,setDeletemodal]=useState(false);
     const [disable,setDisable]=useState(false);
     const showModal =(image)=>{ 
         setModalImage(image);
         setModal(true);
     }
     const hideModal =()=>{ setModal(false);}
+    const showdeletemodal =(productdetails)=>{ 
+        setModaldata(productdetails);
+        setDeletemodal(true);
+    }
+    const hidedeletemodal=()=>{ setDeletemodal(false)}
+
     const edititem=(product)=>{ 
         navigate('/admin/'+product._id);
     }
-    const download=(pdf)=>{
-        axios.get('https://server.scaleiti.com/pdf/'+pdf,{responseType:'blob'})
-        .then(res=>{
-            const url = window.URL.createObjectURL(new Blob([res.data]));
-            const link = document.createElement('a');
-            link.href=url;
-            link.setAttribute('download',pdf);
-            document.body.appendChild(link);
-            link.click();
-        })
-    }
+    // const download=(pdf)=>{
+    //     axios.get('https://server.scaleiti.com/pdf/'+pdf,{responseType:'blob'})
+    //     .then(res=>{
+    //         const url = window.URL.createObjectURL(new Blob([res.data]));
+    //         const link = document.createElement('a');
+    //         link.href=url;
+    //         link.setAttribute('download',pdf);
+    //         document.body.appendChild(link);
+    //         link.click();
+    //     })
+    // }
     const deleteitem=(product)=>{
         setDisable(true);
         if(token){
@@ -45,6 +53,7 @@ function ProductDetails(){
             .then(res=>{
               //console.log(res.data);
               setDisable(false);
+              setDeletemodal(false);
               if(res.data.response.deletedCount===1)
               {
                  navigate('/productslist') 
@@ -97,9 +106,10 @@ function ProductDetails(){
  <br></br>
                 
                 {admin?<button onClick={()=>edititem(details)} className="btn btn-warning mx-2 my-5 login-btn"> Edit</button> :""}
-                {admin?<button onClick={()=>{deleteitem(details)}} disabled={disable} className="btn btn-danger mx-2 my-5 login-btn"> Delete</button> :""}
-
-                <button onClick={()=>download(details.pdf)} className="btn btn-primary mx-2 my-5 login-btn">Download Pdf</button>
+                {admin?<button onClick={()=>{showdeletemodal(details)}} disabled={disable} className="btn btn-danger mx-2 my-5 login-btn"> Delete</button> :""}
+                <a href={"https://server.scaleiti.com/pdf/"+details.pdf} target="_blank">
+                <button className="btn btn-primary mx-2 my-5 login-btn">Download Pdf</button>
+                </a>
                 
                 <div>{msg}</div>
             </div>
@@ -111,7 +121,20 @@ function ProductDetails(){
                 </Modal.Body>
                 <Modal.Footer></Modal.Footer>
             </Modal>
-
+            {/* delete modal */}
+            <Modal show={deletemodal} onHide={hidedeletemodal} backdrop="static">
+                {/* <Modal.Header closeButton></Modal.Header> */}
+                <Modal.Body>
+                   <div className="mt-4">
+                   This operation permanently delete the file.<br/>
+                   Please confirm it to delete.
+                   </div>
+                </Modal.Body>
+                <Modal.Footer>
+                    <button className="btn btn-white mx-2 border border-1" onClick={()=>{setDeletemodal(false)}}>Cancel</button>
+                    <button className="btn btn-danger mx-2" onClick={()=>{deleteitem(modaldata)}}>Confirm</button>
+                </Modal.Footer>
+            </Modal>
         </div>
     )
 }
