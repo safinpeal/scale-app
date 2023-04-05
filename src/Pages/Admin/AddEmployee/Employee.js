@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Modal } from "react-bootstrap";
 
 const Employee=()=>{
     const [name,setName]=useState();
@@ -9,8 +10,17 @@ const Employee=()=>{
     const [list,setList]=useState([]);
     const token = localStorage.getItem('Token');
     const [msg, setMsg]=useState('');
+    const [modaldata,setModaldata]=useState();
+    const [deletemodal,setDeletemodal]=useState(false);
+    const [disable,setDisable]=useState(false);
+    const showdeletemodal =(image)=>{ 
+        setModaldata(image);
+        setDeletemodal(true);
+    }
+    const hidedeletemodal=()=>{ setDeletemodal(false)}
     const addEmployee=(e)=>{
         e.preventDefault();
+        setDisable(true);
         if(token)
         {
         const formdata = new FormData();
@@ -21,6 +31,7 @@ const Employee=()=>{
         formdata.append('file',file);
         axios.post('https://server.scaleiti.com/add-employee',formdata)
         .then(res=>{
+            setDisable(false);
             if(res.data.status==200)
             {
                 list.push(res.data.response);
@@ -51,6 +62,7 @@ const Employee=()=>{
         if(token){
             axios.post('https://server.scaleiti.com/delete-employee',{id:emp._id,image:emp.image,token})
             .then(res=>{
+                setDeletemodal(false);
                 //console.log(res.data);
                 if(res.data.status==0)
                 {
@@ -102,7 +114,7 @@ const Employee=()=>{
                     <input onChange={(e)=>{setFile(e.target.files[0])}} className="form-control" type='file' id='file' name='file' required/>
                 </div>
                 </div>
-                <button onClick={addEmployee} className="btn btn-primary" type="submit">Upload</button>
+                <button disabled={disable} onClick={addEmployee} className="btn btn-primary" type="submit">Upload</button>
                 <div>{msg}</div>
             </form>
             </div>
@@ -111,11 +123,25 @@ const Employee=()=>{
                 list.map(emp=>
                   <div key={emp._id} className="my-2">
                     {emp.name}  {emp.phone} 
-                    <button onClick={()=>{deleteEmp(emp)}} className="btn btn-danger">Delete</button>
+                    <button onClick={()=>{showdeletemodal(emp)}} className="btn btn-danger">Delete</button>
                     <div>{msg}</div>
                   </div>  
                 )
             }
+            {/* delete modal */}
+            <Modal show={deletemodal} onHide={hidedeletemodal} backdrop="static">
+                {/* <Modal.Header closeButton></Modal.Header> */}
+                <Modal.Body>
+                   <div className="mt-4">
+                   This operation permanently delete the file.<br/>
+                   Please confirm it to delete.
+                   </div>
+                </Modal.Body>
+                <Modal.Footer>
+                    <button className="btn btn-white mx-2 border border-1" onClick={()=>{setDeletemodal(false)}}>Cancel</button>
+                    <button className="btn btn-danger mx-2" onClick={()=>{deleteEmp(modaldata)}}>Confirm</button>
+                </Modal.Footer>
+            </Modal>
         </div>
     )
 }

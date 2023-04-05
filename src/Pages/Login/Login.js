@@ -9,6 +9,7 @@ function Login(){
     const [admin,setAdmin]= useContext(AdminContext);
     const [email,setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [msg,setMsg]=useState();
     const login=(e)=>{
         e.preventDefault();
         axios.post('https://server.scaleiti.com/login',{email,password}).then(res=>{
@@ -17,7 +18,16 @@ function Login(){
                 setAdmin(res.data.user);
                 navigate('/admin');
             }
+            else
+            {
+                document.getElementById('password').value='';
+                setMsg('Wrong Credential')
+            }
         })
+    }
+    if(admin)
+    {
+        navigate('/admin');
     }
     return(
         <div className="form-container">
@@ -34,6 +44,7 @@ function Login(){
                 </div>
                 <button type='submit' className="btn btn-primary login-btn mt-5">Login</button>
             </div>
+            <div className="my-4">{msg}</div>
             </form>
         </div>
     )

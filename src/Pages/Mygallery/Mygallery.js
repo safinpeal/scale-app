@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react"
 import { AdminContext } from "../../Context/AdminContext";
 import './Mygallery.css';
+import { Modal } from "react-bootstrap";
 // import $ from 'jquery';
 
 
@@ -14,12 +15,20 @@ const Mygallery=()=>{
     const [images,setImages]=useState([]);
     const [disable,setDisable]=useState(false);
     const [msg,setMsg]=useState('');
+    const [modalImage,setModalImage]=useState();
+    const [deletemodal,setDeletemodal]=useState(false);
     const server = "https://server.scaleiti.com/gallery/";
+    const showdeletemodal =(image)=>{ 
+        setModalImage(image);
+        setDeletemodal(true);
+    }
+    const hidedeletemodal=()=>{ setDeletemodal(false)}
     const deleteit=(image)=>{
         setDisable(true);
         axios.post('https://server.scaleiti.com/delete-gallery',{token,image})
         .then(res=>{
             setDisable(false);
+            setDeletemodal(false);
             console.log(res.data)
             if(res.data.response.deletedCount==1)
             {
@@ -43,7 +52,7 @@ const Mygallery=()=>{
 
     
     return(
-    <div className="container">
+    <div className="container my-5">
         <h2 className="my-4" data-aos="fade-left"> Gallery</h2>
         <div className="">
          <div className="container-div " >
@@ -55,7 +64,7 @@ const Mygallery=()=>{
              <img  src={server+image.imageUrl} alt="" class="img-fluid"/>
              {
              admin?
-             <button className="btn btn-danger my-1" onClick={()=>{deleteit(image)}}>Delete</button>
+             <button className="btn btn-danger my-1" onClick={()=>{showdeletemodal(image)}}>Delete</button>
              :""
              }
              </div>
@@ -66,6 +75,20 @@ const Mygallery=()=>{
              </div>
          </div>
         </div>
+                    {/* delete modal */}
+            <Modal show={deletemodal} onHide={hidedeletemodal} backdrop="static">
+                {/* <Modal.Header closeButton></Modal.Header> */}
+                <Modal.Body>
+                   <div className="mt-4">
+                   This operation permanently delete the file.<br/>
+                   Please confirm it to delete.
+                   </div>
+                </Modal.Body>
+                <Modal.Footer>
+                    <button className="btn btn-white mx-2 border border-1" onClick={()=>{setDeletemodal(false)}}>Cancel</button>
+                    <button className="btn btn-danger mx-2" onClick={()=>{deleteit(modalImage)}}>Confirm</button>
+                </Modal.Footer>
+            </Modal>
     </div>
     )
 }

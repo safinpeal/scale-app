@@ -174,13 +174,15 @@ const AdminPage = () => {
                         <label className='form-label' htmlFor='pdf'>Upload a PDF</label>
                         <input className='form-control' onChange={changePdf} type='file' id='pdf' name='pdf'/>
                     </div>
+                    {!id? 
                     <div className='form-group'>
                         <label className='form-label' htmlFor='files'>Upload Other Images</label>
                         <input className='form-control' onChange={changeFiles} type='file' id='files' name='files' multiple/>
                     </div>
+                    :""}
                     {!id?
                     <button  onClick={uploadData} disabled={disable} className='btn btn-primary m-4 login-btn'>Save</button>:
-                    <button onClick={updateData} disabled={disable} className='btn btn-primary m-4'>Update</button>
+                    <button onClick={updateData} disabled={disable} className='btn btn-primary m-4 login-btn'>Update</button>
                     }
                 </div>
                 <div>{msg}</div>
