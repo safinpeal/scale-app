@@ -7,6 +7,7 @@ const MessageOfChairman = () => {
             ">Message From CEO</h1>
             <div className="container">
                 <div className="row">
+                <div className="col-12">
                 <p data-aos="fade-up-left
             ">
             Dear Valued Customers,<br></br>
@@ -32,6 +33,7 @@ Chairman, ITI Digial Scale<br></br>
 
 
             </p>
+                </div>
                 </div>
             </div>
         </div>

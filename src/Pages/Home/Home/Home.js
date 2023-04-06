@@ -33,8 +33,8 @@ const Home = () => {
               </div>
             )}
             </div>
-            <div>
-                <h3>Our Partners</h3>
+            < div className="mt-5">
+                <h1>Our Clients</h1>
                 <PartnerCarousel></PartnerCarousel>
                
             </div>

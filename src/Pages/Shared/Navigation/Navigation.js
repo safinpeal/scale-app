@@ -37,6 +37,9 @@ const Navigation = () => {
         <li class="nav-item">
           <NavLink to="/about" className="nav-link">About Us</NavLink>
         </li>
+        <li class="nav-item">
+          <NavLink to="/employee" className="nav-link">Employees</NavLink>
+        </li>
         {!admin?
         <li class="nav-item">
           <NavLink to="/login" className="nav-link">Login</NavLink>

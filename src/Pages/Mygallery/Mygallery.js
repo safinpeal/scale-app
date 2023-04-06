@@ -53,10 +53,10 @@ const Mygallery=()=>{
     
     return(
     <div className="container my-5">
-        <h2 className="my-4" data-aos="fade-left"> Gallery</h2>
+        <h2 className="my-4"> Gallery</h2>
         <div className="">
          <div className="container-div " >
-             <div className="row" data-aos="flip-up">
+             <div className="row" >
              {images.map(image=>
              <div className="col-lg-3 col-md-4 col-sm-6 display " key={image._id}>
 

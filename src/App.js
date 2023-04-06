@@ -29,6 +29,7 @@ import Gallery from './Pages/Admin/Gallery/Gallery';
 import Mygallery from './Pages/Mygallery/Mygallery';
 import Admin from './Pages/Admin/Admindata/Admin';
 import Partners from './Pages/Admin/Partners/Partners';
+import EmployeeList from './Pages/AboutUS/Employee/Employeelist';
 //dbb92a44fcba5870b3a29def07b832b3fcb72db1
 
 function App() {
@@ -90,6 +91,9 @@ function App() {
             <Route path="/change-image" element={<ProtectedAdmin><ImageController/></ProtectedAdmin>}/>
             <Route path="/change-partners" element={<ProtectedAdmin><Partners></Partners></ProtectedAdmin>}/>
             <Route path="/notification" element={<Notifications/>}/>
+            
+            <Route path="/employee" element={<EmployeeList/>}/>
+
             <Route path="/my-gallery" element={<Mygallery></Mygallery>}/>
             <Route path="/gallery-image" element={<ProtectedAdmin><Gallery></Gallery></ProtectedAdmin>}/>
 

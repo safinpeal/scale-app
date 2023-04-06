@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import axios from 'axios';
 import '../Login/Login.css'
 import Location from '../Location/Location';
+import './Contact.css'
 const Contact = () => {
     const yourName= useRef(null);
         const yourEmail=useRef(null);
@@ -33,10 +34,10 @@ const Contact = () => {
     return (
         <div>
             
-                     <h1 data-aos="zoom-in-right">Drop your query </h1>
-                     <h4 data-aos="zoom-in-left">We will contact you soon</h4>
+                     <h4 >Drop your query </h4>
+                     <h4>We will contact you soon</h4>
           
-            <form data-aos="zoom-in-left" className='container border border-2 my-5 rounded p-3' onSubmit={handleSubmit}>
+            <form className='container border border-2 my-5 rounded p-3 contact-form' onSubmit={handleSubmit}>
                     <div className='row mt-3 g-5'>
                         <div className='col-md'>
                         <label htmlFor='name' className='form-label'>Your Name</label>
@@ -60,9 +61,9 @@ const Contact = () => {
                     <button type='submit' className='btn btn-primary mb-3 login-btn'>Submit</button>
             </form>
             <div className='mt-5'>
-                <h2 className='my-4'>View our location on Google Map</h2>
-                <Location></Location>
-                {/* //  */}
+                <h2 className='my-4'>View our location on Google Map</h2>  
+                  <Location></Location> 
+                
             </div>
         </div>
     );

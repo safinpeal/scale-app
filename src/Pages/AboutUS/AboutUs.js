@@ -10,10 +10,14 @@ const AboutUs = () => {
     return (
         <div>
            
-            <h1 data-aos="fade-left">Who We are</h1>
+            
             <div className="container">
-                <div className="row " >
-        <p data-aos="zoom-in"> Welcome to <b>Innovative Technology International</b>, your trusted partner in the digital weighing scale industry. Our company is dedicated to providing high-quality products and services to meet the demands of industrial sectors all over the world.<br></br>
+            <h1 className="who">Who We are</h1>
+                <div className="row" >
+                    
+       <div className="col-lg-12 col-md-12 col-sm-12">
+       
+       <p data-aos="zoom-in"> Welcome to <b>Innovative Technology International</b>, your trusted partner in the digital weighing scale industry. Our company is dedicated to providing high-quality products and services to meet the demands of industrial sectors all over the world.<br></br>
 <br></br>
 At Innovative Technology International, we specialize in importing and distributing digital weighing scales, scale-related spare parts, and a wide variety of industrial machinery items and spare parts. We have extensive experience in the industry, with a proven track record of providing top-quality products at competitive prices.<br></br>
 <br></br>
@@ -25,15 +29,16 @@ At Innovative Technology International, we understand that our customers demand 
 Our team of experts is always on hand to provide advice, assistance, and troubleshooting to ensure that our customers get the most out of their equipment. We are constantly investing in research and development to ensure that our products remain at the cutting edge of technology, and we are always looking for ways to improve and enhance our offerings.<br></br>
 <br></br>
 At Innovative Technology International, we are committed to building long-term relationships with our customers based on trust, reliability, and exceptional service. Thank you for considering us as your partner in the digital weighing scale industry.</p>
+       </div>
                 </div>
             </div>
             <br></br>
 
             <MessageOfChairman></MessageOfChairman>
-            <div className='mt-5'>
+            {/* <div className='mt-5'>
                 <h2>Our Employees</h2>
                 <EmployeeList></EmployeeList>
-            </div>
+            </div> */}
         </div>
     );
 };
