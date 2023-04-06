@@ -25,10 +25,10 @@ const Home = () => {
     return (
         <div className='container'>
             <Carousel></Carousel>
-            <h2 className='mt-3'>Our Top Selling Products List</h2>
-            <div className='row gy-3 justify-content-center my-4'>
+            <h2 className='mt-3'> Top Selling Products</h2>
+            <div className='row gy-3 my-4'>
             { products.map((product)=>
-              <div key={product._id} className='col-8 col-md-4'>
+              <div key={product._id} className='col-lg-4 col-md-6 col-sm-12'>
                 <ProductList  product={product}></ProductList>
               </div>
             )}

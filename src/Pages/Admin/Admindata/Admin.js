@@ -35,7 +35,7 @@ const Admin=()=>{
         }
     }
    return (
-    <div className="container">
+    <div className="container admin">
             <h2 className="my-4">Update Your Login Credential</h2>
             <form onSubmit={update}  className="form-login" data-aos="fade-up" >
             <div className="form-row">
