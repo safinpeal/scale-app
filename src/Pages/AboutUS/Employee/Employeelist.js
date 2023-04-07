@@ -17,7 +17,7 @@ const EmployeeList=()=>{
     return(
         <div>
             <div className="container">
-                <h1 className="mb-5">Our Management</h1>
+                <h1 className="mb-5">Employees Of Management</h1>
                 <div className="row">
                     <div className="image-emp card" data-aos="zoom-in">
                         <div className="image-emp-img">
