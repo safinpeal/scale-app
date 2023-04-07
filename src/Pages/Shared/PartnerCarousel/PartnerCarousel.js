@@ -38,7 +38,7 @@ const PartnerCarousel = () => {
           
             <Carousel responsive={responsive} data-aos="zoom-in">
             {logos.map(logo=>
-                 <div  key={logo._id}><img src={server+logo.imageUrl} alt={logo.imageUrl}/></div>
+                 <div  key={logo._id}><img className="img-fluid" src={server+logo.imageUrl} alt={logo.imageUrl}/></div>
             
               )}
                 
